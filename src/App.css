@@ -3,14 +3,36 @@
 /* -----Header----- */
 .header {
   background-color: rgb(130, 130, 173);
+  display: flex;
+  justify-content: space-between;
 }
 .header-nav {
   padding: 0;
+  display: flex;
 }
 
 .header-nav li {
   list-style: none;
   text-decoration: none;
+}
+
+.header-nav li a {
+  color: #000;
+}
+
+.nav-link {
+  padding: 0;
+}
+
+/* -----CatInfo page----- */
+.cats-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cats-cards {
+  margin: 0 10%;
 }
 
 

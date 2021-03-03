@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <h1>hellohellohello</h1>
+        <p>welcome to Kittchat. We have many cute and friendly cats in each cafe.</p>
         <Footer />
       </div>
     )

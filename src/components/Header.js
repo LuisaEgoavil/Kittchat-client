@@ -8,15 +8,17 @@ class Header extends Component {
     return (
       <div>
         <div className="header">
-          <img src="images/logo-kittchat.png" alt="logo" width="100"/>
+          <div className="logo">
+            <img src="images/logo-kittchat.png" alt="logo" width="100"/>
+          </div>
           <ul className="header-nav">
             <li>
               <NavDropdown title="ABOUT" id="nav-dropdown">
-                <NavDropdown.Item eventKey="4.1">Cafe</NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2">Cats</NavDropdown.Item>
+                <Link to="/cafe"><NavDropdown.Item eventKey="4.1">Cafe</NavDropdown.Item></Link>
+                <Link to="/catinfo"><NavDropdown.Item eventKey="4.2">Cats</NavDropdown.Item></Link>
               </NavDropdown>
             </li>
-            <li><Link to="/about">CONTACT</Link></li>
+            <li><Link to="/contact">CONTACT</Link></li>
             <li>
               <NavDropdown title="RESERVATION" id="nav-dropdown">
                 <NavDropdown.Item eventKey="4.1">Log In</NavDropdown.Item>
