@@ -4,7 +4,9 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        
+        <div className="footer">
+          <small>copyright</small>
+        </div>
       </div>
     )
   }
