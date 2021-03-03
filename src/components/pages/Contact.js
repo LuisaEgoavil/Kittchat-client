@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
-import MyMap from '../MyMap'
+// import MyMap from '../MyMap'
 
 class Contact extends Component {
   render() {
     return (
       <div>
         <Header />
-        <div className="main-body">
+        <div className="main-body contact-body">
           <div className="contact-left">
             <h2>Cafe Name</h2>
             <p>cafename here</p>
@@ -22,7 +22,8 @@ class Contact extends Component {
             <p>email here</p>
           </div>
           <div className="contact-right">
-            <MyMap />
+          <p>map gonna come here</p>
+            {/* <MyMap /> */}
           </div>
         </div>
         <Footer />
