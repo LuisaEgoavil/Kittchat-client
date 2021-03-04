@@ -7,7 +7,7 @@ class SignUp extends Component {
     return (
       <div>
         <Header />
-          <form>
+          <form onSubmit={this.props.onSignUp}>
             <div className="form-group">
               <label>Username</label>
               <input name="username" type="text"/>
@@ -28,3 +28,4 @@ class SignUp extends Component {
   }
 }
 export default SignUp
+

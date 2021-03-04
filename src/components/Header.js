@@ -22,7 +22,7 @@ class Header extends Component {
             {/* <li><Link to="/reservation">RESERVATION</Link></li> */}
       
             <li>
-              <NavDropdown title="something" id="nav-dropdown"><Link to="/reservation">Reservation</Link>
+              <NavDropdown title="reservation" id="nav-dropdown"><Link to="/reservation">Reservation</Link>
                 <NavDropdown.Item eventKey="4.1"><Link to="/login">Log in</Link></NavDropdown.Item>
               </NavDropdown>
             </li>
