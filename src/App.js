@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Cafe from "./components/pages/Cafe";
 import CatInfo from "./components/pages/CatInfo";
@@ -8,9 +8,44 @@ import Contact from "./components/pages/Contact";
 import Reservation from "./components/pages/Reservation";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
+import axios from "axios"
+import config from "./config"
 
 class App extends Component {
+
+  state = {
+    loggedInUser: null,
+    error: null
+  }
+  
+
+  handleSignUp=(event)=> {
+    event.preventDefault()
+    let user = {
+      username: event.target.username.value,
+      email: event.target.email.value,
+      password: event.target.password.value
+    }
+    axios.post(`${config.API_URL}/api/signup`, user)
+      .then((response) => {
+        console.log(response)
+          this.setState({
+            loggedInUser: response.data
+          }, () => {
+            this.props.history.push('/login')
+          })
+      })
+      .catch((err) => {
+        console.log(err)
+          this.setState({
+            error: err.response.data
+          })
+      })
+  }
+
+  
   render () {
+
     return (
       <div className="App">
         <Switch>
@@ -19,7 +54,9 @@ class App extends Component {
           <Route path="/catinfo" component={CatInfo} />
           <Route path="/contact" component={Contact} />
           <Route path="/reservation" component={Reservation} />
-          <Route path="/signup" component={SignUp} />
+          <Route path="/signup" render={(routeProps)=> {
+            return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
+          }} />
           <Route path="/login" component={LogIn} />
         </Switch>
       </div>
@@ -27,4 +64,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
+
