@@ -23,6 +23,10 @@ class MakeBooking extends Component {
                 <input name="time" type="time" />
               </div>
               <div>
+                <label>Name</label><br></br>
+                <input name="name" type="text" />
+              </div>
+              <div>
                 <label>Special Request</label><br></br>
                 <input name="request" type="text" />
               </div><br></br>
