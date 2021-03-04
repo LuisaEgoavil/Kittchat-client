@@ -23,21 +23,14 @@ class MakeBooking extends Component {
                 <input name="time" type="time" />
               </div>
               <div>
-<<<<<<< HEAD
-                <label>NAME</label>
+                <label>Name</label><br></br>
                 <input name="name" type="text" />
               </div>
               <div>
-                <label>ANY REQUEST</label>
-                <input name="reqest" type="reqest" />
-              </div>
-              <button type="submit">Submit</button>
-=======
                 <label>Special Request</label><br></br>
                 <input name="request" type="text" />
               </div><br></br>
               <Link to="/bookinglist"><button type="submit">Submit</button></Link>
->>>>>>> origin/lupita
             </form>
           </div>
         </div>
