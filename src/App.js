@@ -34,7 +34,7 @@ class App extends Component {
           this.setState({
             loggedInUser: response.data
           }, () => {
-            this.props.history.push('/login')
+            this.props.history.push('/')
           })
       })
       .catch((err) => {
@@ -44,6 +44,26 @@ class App extends Component {
           })
       })
   }
+//---------------------LOG IN------------------------------
+  handleLogIn = (event) => {
+    event.preventDefault()
+    let user = {
+      email: event.target.email.vaue,
+      password: event.target.password.value
+    }
+    axios.post(`${config.API_URL}/api/login`, user, {withCredentials: true})
+      .then((response) => {
+        this.setState({
+          loggedInUser: response.data
+        }, () => {
+          this.props.history.push('/')
+        })
+      })
+      .catch((err) => {
+        console.log('something went wrong', err)
+      })
+  }
+//-------------------LOG OUT----------------------------------
 
 // ----------Reservation form---------- //
   handleBook=(event)=> {
@@ -85,9 +105,11 @@ class App extends Component {
           <Route path="/signup" render={(routeProps)=> {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
           }} />
-          <Route path="/login" component={LogIn} />
-          <Route  path="/booking" render={(routeProps) => {
+          <Route path="/booking" render={(routeProps) => {
             return <MakeBooking onBook={this.handleBook}{...routeProps} />
+          }} />
+          <Route path="/login" render={(routeProps) => {
+            return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
           }} />
         </Switch>
       </div>

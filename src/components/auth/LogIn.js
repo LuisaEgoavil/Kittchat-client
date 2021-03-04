@@ -6,7 +6,7 @@ class LogIn extends Component {
     return (
       <div>
       <Header />
-        <form>
+        <form onSubmit={this.props.onLogIn}>
           <div className="form-grooup">
             <label>Email</label>
             <input name="email" type="email"/>
@@ -15,7 +15,7 @@ class LogIn extends Component {
             <label>Password</label>
             <input name="password" type="password" />
           </div>
-          <botton type="submit">Submit</botton>
+          <button type="submit">Submit</button>
         </form>
       </div>
     )

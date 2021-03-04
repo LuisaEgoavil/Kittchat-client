@@ -18,14 +18,16 @@ class Header extends Component {
                 <NavDropdown.Item eventKey="4.2"><Link to="/catinfo">Cats</Link></NavDropdown.Item>
               </NavDropdown>
             </li>
-            <li><Link to="/contact">CONTACT</Link></li>
-            {/* <li><Link to="/reservation">RESERVATION</Link></li> */}
+            <li><Link to="/contact">CONTACT</Link></li>|
+            <li><Link to="/reservation">RESERVATION</Link></li>|
+            <li><Link to="/login">LOGIN</Link></li>|
+            <li><Link to="/signup">SIGNUP</Link></li>
       
-            <li>
+            {/* <li>
               <NavDropdown title="reservation" id="nav-dropdown"><Link to="/reservation">Reservation</Link>
                 <NavDropdown.Item eventKey="4.1"><Link to="/login">Log in</Link></NavDropdown.Item>
               </NavDropdown>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
