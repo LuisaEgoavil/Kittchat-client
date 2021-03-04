@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Header from '../Header'
 import Footer from '../Footer'
 import '../../App.css';
 
@@ -7,7 +6,7 @@ class CatInfo extends Component {
   render() {
     return (
       <div>
-        <Header />
+        
         <div className="main-body cats-body">
           <div className="cats-cards">
             <img src="" alt="cats"/>

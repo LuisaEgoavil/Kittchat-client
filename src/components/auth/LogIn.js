@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import Header from "../Header"
 
 class LogIn extends Component {
   render() {
     return (
       <div>
-      <Header />
+      
         <form onSubmit={this.props.onLogIn}>
           <div className="form-grooup">
             <label>Email</label>
@@ -17,6 +16,7 @@ class LogIn extends Component {
           </div>
           <button type="submit">Submit</button>
         </form>
+        
       </div>
     )
   }

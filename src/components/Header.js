@@ -20,14 +20,18 @@ class Header extends Component {
             </li>
             <li><Link to="/contact">CONTACT</Link></li>|
             <li><Link to="/reservation">RESERVATION</Link></li>|
-            <li><Link to="/login">LOGIN</Link></li>|
-            <li><Link to="/signup">SIGNUP</Link></li>
-      
-            {/* <li>
-              <NavDropdown title="reservation" id="nav-dropdown"><Link to="/reservation">Reservation</Link>
-                <NavDropdown.Item eventKey="4.1"><Link to="/login">Log in</Link></NavDropdown.Item>
-              </NavDropdown>
-            </li> */}
+            
+            {
+                this.props.user ? (
+                  <button onClick={this.props.onLogout}>Logout</button>
+                ) : (
+                  <>
+                  <Link to="/login">Login</Link>|
+                  <Link to="/signup">SignUp</Link>
+                  </>
+                )
+          }
+
           </ul>
         </div>
       </div>

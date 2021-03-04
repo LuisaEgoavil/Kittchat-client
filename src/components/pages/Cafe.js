@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import Header from '../Header'
 import Footer from '../Footer'
 
 class Cafe extends Component {
   render() {
     return (
       <div>
-        <Header />
+        
         <div className="main-body">
           <div className="cafe-left">
-            <p>here is the menu name</p>
+            <h2>Menu</h2>
             <p>price: </p>
           </div>
           <div className="cafe-right">
             <img src="" alt="cafemenu"/>
-            <p>menu name come here</p>
+            <p>names of the menu</p>
           </div>
         </div>
         <Footer />

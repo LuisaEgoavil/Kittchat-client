@@ -1,28 +1,29 @@
 import React, { Component } from 'react'
-import Header from "../Header"
 import Footer from "../Footer"
+import { Link } from 'react-router-dom' 
 
 class MakeBooking extends Component {
   render() {
     return (
       <div>
-      <Header />
+      
         <div className="main-body booking-body">
           <div className="booking-right">
             <form onSubmit={this.props.onBook} className="book-form">
               <div>
-                <label>CAFE LOCATION</label>
+                <label>Cafe Location</label><br></br>
                 <input name="location" type="location" />
               </div>
               <div>
-                <label>DATE</label>
+                <label>Date</label><br></br>
                 <input name="date" type="date" />
               </div>
               <div>
-                <label>TIME</label>
+                <label>Time</label><br></br>
                 <input name="time" type="time" />
               </div>
               <div>
+<<<<<<< HEAD
                 <label>NAME</label>
                 <input name="name" type="text" />
               </div>
@@ -31,6 +32,12 @@ class MakeBooking extends Component {
                 <input name="reqest" type="reqest" />
               </div>
               <button type="submit">Submit</button>
+=======
+                <label>Special Request</label><br></br>
+                <input name="request" type="text" />
+              </div><br></br>
+              <Link to="/bookinglist"><button type="submit">Submit</button></Link>
+>>>>>>> origin/lupita
             </form>
           </div>
         </div>
