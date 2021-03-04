@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Header from '../Header.js'
-import Footer from '../Footer.js'
+import Header from '../Header'
+import Footer from '../Footer'
 import '../../App.css';
 
 class CatInfo extends Component {
