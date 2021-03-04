@@ -8,8 +8,8 @@ class MakeBooking extends Component {
       <div>
       <Header />
         <div className="main-body booking-body">
-          <div onSubmit={this.props.onBook} className="booking-right">
-            <form className="book-form">
+          <div className="booking-right">
+            <form onSubmit={this.props.onBook} className="book-form">
               <div>
                 <label>CAFE LOCATION</label>
                 <input name="location" type="location" />
@@ -21,6 +21,10 @@ class MakeBooking extends Component {
               <div>
                 <label>TIME</label>
                 <input name="time" type="time" />
+              </div>
+              <div>
+                <label>NAME</label>
+                <input name="name" type="text" />
               </div>
               <div>
                 <label>ANY REQUEST</label>

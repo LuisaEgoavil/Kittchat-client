@@ -11,6 +11,7 @@ import LogIn from "./components/auth/LogIn";
 import axios from "axios";
 import config from "./config";
 import MakeBooking from "./components/pages/MakeBooking";
+import MyMap from "./components/MyMap"
 
 
 class App extends Component {
@@ -69,10 +70,10 @@ class App extends Component {
   handleBook=(event)=> {
     event.preventDefault()
     let booking = {
-      location: event.target.location.value,
+      locationName: event.target.locationName.value,
       time: event.target.time.value,
       date: event.target.date.value,
-      myUserId: event.myUserId.calue
+      myUserId: event.target.myUserId.value
     }
     axios.post(`${config.API_URL}/api/booking`, booking)
       .then((response) => {
@@ -111,6 +112,7 @@ class App extends Component {
           <Route path="/login" render={(routeProps) => {
             return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
           }} />
+          <MyMap />
         </Switch>
       </div>
     );

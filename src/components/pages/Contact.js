@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
-// import MyMap from '../MyMap'
+import MyMap from '../MyMap'
 
 class Contact extends Component {
   render() {
@@ -22,8 +22,7 @@ class Contact extends Component {
             <p>email here</p>
           </div>
           <div className="contact-right">
-          <p>map gonna come here</p>
-            {/* <MyMap /> */}
+            <MyMap />
           </div>
         </div>
         <Footer />
