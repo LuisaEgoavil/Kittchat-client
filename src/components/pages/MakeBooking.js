@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import Header from "../Header"
 import Footer from "../Footer"
 
 class MakeBooking extends Component {
   render() {
     return (
       <div>
-      <Header />
+      
         <div className="main-body booking-body">
-          <div onSubmit={this.props.onBook} className="booking-right">
-            <form className="book-form">
+          <div className="booking-right">
+            <form onSubmit={this.props.onBook} className="book-form">
               <div>
                 <label>CAFE LOCATION</label>
                 <input name="location" type="location" />

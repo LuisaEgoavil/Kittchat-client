@@ -11,6 +11,7 @@ import LogIn from "./components/auth/LogIn";
 import axios from "axios";
 import config from "./config";
 import MakeBooking from "./components/pages/MakeBooking";
+import Header from './components/Header'
 
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
           this.setState({
             loggedInUser: response.data
           }, () => {
-            this.props.history.push('/')
+            this.props.history.push('/login')
           })
       })
       .catch((err) => {
@@ -48,7 +49,7 @@ class App extends Component {
   handleLogIn = (event) => {
     event.preventDefault()
     let user = {
-      email: event.target.email.vaue,
+      email: event.target.email.value,
       password: event.target.password.value
     }
     axios.post(`${config.API_URL}/api/login`, user, {withCredentials: true})
@@ -56,7 +57,7 @@ class App extends Component {
         this.setState({
           loggedInUser: response.data
         }, () => {
-          this.props.history.push('/')
+          this.props.history.push('/booking')
         })
       })
       .catch((err) => {
@@ -65,6 +66,20 @@ class App extends Component {
   }
 //-------------------LOG OUT----------------------------------
 
+  handleLogout = () => {
+    axios.post(`${config.API_URL}/api/logout`, {}, {withCredentials: true})
+  .then(() => {
+      this.setState({
+        loggedInUser: null
+      }, () => {
+        this.props.history.push('/')
+      })
+  })
+  }
+//------------------------------------------------------------
+
+
+
 // ----------Reservation form---------- //
   handleBook=(event)=> {
     event.preventDefault()
@@ -72,7 +87,7 @@ class App extends Component {
       location: event.target.location.value,
       time: event.target.time.value,
       date: event.target.date.value,
-      myUserId: event.myUserId.calue
+      myUserId: event.myUserId.value
     }
     axios.post(`${config.API_URL}/api/booking`, booking)
       .then((response) => {
@@ -93,9 +108,11 @@ class App extends Component {
 
   
   render () {
+    const{loggedInUser, error} = this.state
 
     return (
       <div className="App">
+      <Header onLogout={this.handleLogout} user={loggedInUser}/>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/cafe" component={Cafe} />

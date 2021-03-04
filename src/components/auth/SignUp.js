@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import Header from '../Header'
 import Footer from '../Footer'
 
 class SignUp extends Component {
   render() {
     return (
       <div>
-        <Header />
+       
           <form onSubmit={this.props.onSignUp}>
             <div className="form-group">
               <label>Username</label>

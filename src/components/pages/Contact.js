@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Header from '../Header'
 import Footer from '../Footer'
 // import MyMap from '../MyMap'
 
@@ -7,7 +6,7 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        <Header />
+        
         <div className="main-body contact-body">
           <div className="contact-left">
             <h2>Cafe Name</h2>

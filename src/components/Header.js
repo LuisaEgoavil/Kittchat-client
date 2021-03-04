@@ -21,6 +21,18 @@ class Header extends Component {
             <li><Link to="/contact">CONTACT</Link></li>|
             <li><Link to="/reservation">RESERVATION</Link></li>|
             <li><Link to="/login">LOGIN</Link></li>|
+            {
+                this.props.user ? (
+                  <button onClick={this.props.onLogout}>Logout</button>
+                ) : (
+                  <>
+                  <Link  style={{marginLeft: '10px'}}  to="/login">Login</Link>
+                  <Link  style={{marginLeft: '10px'}}  to="/signup">SignUp</Link>
+                  </>
+                )
+
+
+          }
             <li><Link to="/signup">SIGNUP</Link></li>
       
             {/* <li>
