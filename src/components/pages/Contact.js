@@ -3,6 +3,10 @@ import Footer from '../Footer'
 import MyMap from '../MyMap'
 
 class Contact extends Component {
+
+  state = {
+    
+  }
   render() {
     return (
       <div>
