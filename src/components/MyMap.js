@@ -32,11 +32,6 @@ class MyMap extends Component {
       iconSize: [60, 60]
     })
 
-    const locationPin1 = new L.icon({
-      iconUrl: '../images/pin.png',
-      iconSize: [60,60]
-    })
-
     return (
       <div>
           <MapContainer style={{width: '600px', height: '400px'}}center={position1} zoom={13} scrollWheelZoom={false}>
