@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet';
 
+
 class MyMap extends Component {
 
   render() {
@@ -17,7 +18,7 @@ class MyMap extends Component {
       iconUrl: '../images/pin.png',
       iconSize: [60, 60]
     })
-
+    
     return (
       <div>
           <MapContainer style={{width: '700px', height: '500px'}}center={centerPosition} zoom={12} scrollWheelZoom={false}>
@@ -26,31 +27,31 @@ class MyMap extends Component {
               
             <div className="location-spot">
               <Marker icon={locationPin} position={position1}>
-                <Popup>Location1</Popup>
+                <Popup>LocationA</Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position2}>
-                <Popup><button>Location2</button></Popup>
+                <Popup><button>LocationB</button></Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position3}>
-                <Popup>Location3</Popup>
+                <Popup>LocationC</Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position4}>
-                <Popup>Location4</Popup>
+                <Popup>LocationD</Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position5}>
-                <Popup>Location5</Popup>
+                <Popup>LocationE</Popup>
               </Marker>
             </div>
           </MapContainer>
