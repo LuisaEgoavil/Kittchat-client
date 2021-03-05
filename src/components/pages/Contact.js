@@ -60,9 +60,11 @@ class Contact extends Component {
             <button type="submit">Reserve here!</button>
           </div>
           <div className="contact-right">
-            <MyMap />
+          
           </div>
         </div>
+
+        
         <Footer />
       </div>
     )
