@@ -5,6 +5,8 @@ import { NavDropdown} from "react-bootstrap";
 
 class Header extends Component {
   render() {
+    
+
     return (
       <div>
         <div className="header">
@@ -24,6 +26,7 @@ class Header extends Component {
             {
                 this.props.user ? (
                   <button onClick={this.props.onLogout}>Logout</button>
+
                 ) : (
                   <>
                   <Link to="/login">Login</Link>|
@@ -31,6 +34,7 @@ class Header extends Component {
                   </>
                 )
           }
+          
 
           </ul>
         </div>
