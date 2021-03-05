@@ -6,7 +6,7 @@ class MakeBooking extends Component {
   render() {
     return (
       <div>
-      
+    
         <div className="main-body booking-body">
           <div className="booking-right">
             <form onSubmit={this.props.onBook} className="book-form">

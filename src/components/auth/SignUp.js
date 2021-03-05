@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Footer from '../Footer'
 import GoogleLogin from 'react-google-login'
 
+
 class SignUp extends Component {
 
   responseGoogle=(response) => {
@@ -11,7 +12,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-       
+      
           <form onSubmit={this.props.onSignUp}>
             <div className="form-group">
               <label>Username</label>
@@ -31,9 +32,6 @@ class SignUp extends Component {
             <GoogleLogin 
               clientId="485417191125-mla07ur1253tkh1lhepvdqb17hrlofs2.apps.googleusercontent.com"
               buttonText="Signup with Google"
-              // render={renderProps => (
-              //   <button onClick={renderProps.onClick} disabled={renderProps.disabled}>"Signup with Google"</button>
-              // )}
               onSuccess={this.responseGoogle}
               onFailure={this.responseGoogle}
               isSignedIn={true}

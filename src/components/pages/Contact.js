@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Footer from '../Footer'
 import MyMap from '../MyMap'
 import config from '../../config'
-
+import Header from '../Header'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet';
@@ -78,7 +78,7 @@ class Contact extends Component {
 
     return (
       <div>
-        
+        <Header />
         <div className="main-body contact-body">
           <div className="contact-left">
           
