@@ -32,7 +32,7 @@ class MyMap extends Component {
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position2}>
-                <Popup>Location2</Popup>
+                <Popup><button>Location2</button></Popup>
               </Marker>
             </div>
 
