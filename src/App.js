@@ -39,7 +39,7 @@ class App extends Component {
           this.setState({
             loggedInUser: response.data
           }, () => {
-            this.props.history.push('/login')
+            this.props.history.push('/booking')
           })
       })
       .catch((err) => {

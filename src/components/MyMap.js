@@ -6,10 +6,10 @@ import L from 'leaflet';
 class MyMap extends Component {
   render() {
     const position1 = [51.505, -0.09]
-    const position2 = [52.505, -0.09]
-    const position3 = [53.505, -0.09]
-    const position4 = [54.505, -0.09]
-    const position5 = [55.505, -0.09]
+    const position2 = [51.605, -0.11]
+    const position3 = [51.705, -0.21]
+    const position4 = [51.805, -0.31]
+    const position5 = [51.905, -0.41]
 
     const locationPin1 = new L.Icon({
       iconUrl: '../images/pin.png',
@@ -30,6 +30,11 @@ class MyMap extends Component {
     const locationPin5 = new L.Icon({
       iconUrl: '../images/pin.png',
       iconSize: [60, 60]
+    })
+
+    const locationPin1 = new L.icon({
+      iconUrl: '../images/pin.png',
+      iconSize: [60,60]
     })
 
     return (

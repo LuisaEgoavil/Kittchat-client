@@ -19,6 +19,7 @@ class Contact extends Component {
             <p>Number here</p>
             <h2>Email</h2>
             <p>email here</p>
+            <button type="submit">Reserve here!</button>
           </div>
           <div className="contact-right">
             <MyMap />
