@@ -17,7 +17,7 @@ class Contact extends Component {
     // step 4. comnponent did mount will execute
     console.log(this.props)
 
-    
+    let locationId = this.props.match.params.locationId
     axios.get(`${config.API_URL}/api/location`)
       .then((response) => {
         console.log(response.data)
@@ -28,10 +28,10 @@ class Contact extends Component {
       })
   }
 
-  handleLocation = (locationIndex) => {
-    // this.state.locationToDisplay = 1 // Please never do this
-    this.setState({locationToDisplay: 1}) // this causes a rerender
-  }
+  // handleLocation = (locationIndex) => {
+  //   // this.state.locationToDisplay = 1 // Please never do this
+  //   this.setState({locationToDisplay: 1}) // this causes a rerender
+  // }
 
   // step 3 Try to render
   // step 5 A rerender happends
@@ -39,13 +39,13 @@ class Contact extends Component {
     const {location, locationToDisplay} = this.state
 
     if (location.length === 0) return <h1>Loading</h1>
-    return (
+    else return (
       <div>
         
         <div className="main-body contact-body">
           <div className="contact-left">
 
-          <button onClick={this.handleLocation}>Location 2</button>
+          {/* <button onClick={this.handleLocation}>Location 2</button> */}
           
             <h2>Cafe Name</h2>
             <p>{location[locationToDisplay].cafeName}</p>
