@@ -2,8 +2,34 @@ import React, { Component } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet';
+// import axios from "axios"
+// import config from '../config'
 
 class MyMap extends Component {
+
+  // state = {
+  //   location:[],
+  //   locationToDisplay: 0
+  // }
+  // componentDidMount() {
+  //   // step 4. comnponent did mount will execute
+  //   console.log(this.props)
+
+  //   // let locationId = this.props.match.params.locationId
+  //   axios.get(`${config.API_URL}/api/location`)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //       this.setState({ location: response.data }) // this causes a rerender
+  //     })
+  //     .catch(() => {
+  //       console.log('Detail fetch failed')
+  //     })
+  // }
+
+  handleLocation = (locationIndex) => {
+    // this.state.locationToDisplay = 1 // Please never do this
+    this.setState({locationToDisplay: 1}) // this causes a rerender
+  }
 
   render() {
     const centerPosition = [52.517510, 13.393847]
@@ -17,6 +43,7 @@ class MyMap extends Component {
       iconUrl: '../images/pin.png',
       iconSize: [60, 60]
     })
+    // if (location.length === 0) return <h1>Loading</h1>
 
     return (
       <div>
@@ -26,31 +53,31 @@ class MyMap extends Component {
               
             <div className="location-spot">
               <Marker icon={locationPin} position={position1}>
-                <Popup>Location1</Popup>
+                <Popup>LocationA</Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position2}>
-                <Popup>Location2</Popup>
+                <Popup>LocationB<button onClick={this.handleLocation}>details</button></Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position3}>
-                <Popup>Location3</Popup>
+                <Popup>LocationC</Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position4}>
-                <Popup>Location4</Popup>
+                <Popup>LocationD</Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position5}>
-                <Popup>Location5</Popup>
+                <Popup>LocationE</Popup>
               </Marker>
             </div>
           </MapContainer>

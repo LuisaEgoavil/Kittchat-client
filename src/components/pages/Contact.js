@@ -17,7 +17,7 @@ class Contact extends Component {
     // step 4. comnponent did mount will execute
     console.log(this.props)
 
-    let locationId = this.props.match.params.locationId
+    
     axios.get(`${config.API_URL}/api/location`)
       .then((response) => {
         console.log(response.data)
@@ -39,7 +39,7 @@ class Contact extends Component {
     const {location, locationToDisplay} = this.state
 
     if (location.length === 0) return <h1>Loading</h1>
-    else return (
+    return (
       <div>
         
         <div className="main-body contact-body">
