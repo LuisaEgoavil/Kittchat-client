@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Footer from "../Footer"
 import { Link } from 'react-router-dom' 
+import Contact from './Contact'
 
 class MakeBooking extends Component {
   render() {
@@ -12,7 +13,14 @@ class MakeBooking extends Component {
             <form onSubmit={this.props.onBook} className="book-form">
               <div>
                 <label>Cafe Location</label><br></br>
-                <input name="location" type="location" />
+                <select name="cafeLocation">
+                  <option value="location1">Location1</option>
+                  <option value="location2">Location2</option>
+                  <option value="location3">Location3</option>
+                  <option value="location4">Location4</option>
+                  <option value="location5">Location5</option>
+                </select>
+                {/* <input name="location" type="location" /> */}
               </div>
               <div>
                 <label>Date</label><br></br>
