@@ -4,13 +4,20 @@ import { Link } from 'react-router-dom'
 import Contact from './Contact'
 
 class MakeBooking extends Component {
+  // constructor(props) {
+  //   super(props)
+  // }
+
+
   render() {
+  
+
     return (
       <div>
     
         <div className="main-body booking-body">
           <div className="booking-right">
-            <form onSubmit={this.props.onBook} className="book-form">
+            <form className="book-form">
               <div>
                 <label>Cafe Location</label><br></br>
                 <select name="cafeLocation">
@@ -40,8 +47,10 @@ class MakeBooking extends Component {
               </div><br></br>
               <Link to="/bookinglist"><button type="submit">Submit</button></Link>
             </form>
+
           </div>
         </div>
+        {/* {contactForm} */}
         <Footer />
       </div>
     )

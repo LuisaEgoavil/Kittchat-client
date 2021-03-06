@@ -56,6 +56,9 @@ class Contact extends Component {
     this.setState({locationToDisplay: 4}) 
   }
 
+
+
+
   // step 3 Try to render
   // step 5 A rerender happends
   render() {
@@ -78,7 +81,6 @@ class Contact extends Component {
 
     return (
       <div>
-       
         <div className="main-body contact-body">
           <div className="contact-left">
           
