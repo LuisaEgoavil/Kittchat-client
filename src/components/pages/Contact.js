@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import Footer from '../Footer'
 import MyMap from '../MyMap'
 import config from '../../config'
-import Header from '../Header'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import {Link} from 'react-router-dom'
 import L from 'leaflet';
 
 
@@ -78,7 +78,7 @@ class Contact extends Component {
 
     return (
       <div>
-        <Header />
+       
         <div className="main-body contact-body">
           <div className="contact-left">
           
@@ -92,7 +92,7 @@ class Contact extends Component {
             <p>{location[locationToDisplay].phoneNumber}</p>
             <h2>Email</h2>
             <p>{location[locationToDisplay].email}</p>
-            <button type="submit">Reserve here!</button>
+            <Link to="/reservation"><button type="submit">Reserve here!</button></Link>
           </div>
 
           <div>
@@ -102,31 +102,31 @@ class Contact extends Component {
               
             <div className="location-spot">
               <Marker icon={locationPin} position={position1}>
-                <Popup><button  onClick={this.handleLocationA}>Location A</button></Popup>
+                <Popup><button  onClick={this.handleLocationA}>Kittchat Schöneberg</button></Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position2}>
-                <Popup><button onClick={this.handleLocationB}>Location B</button></Popup>
+                <Popup><button onClick={this.handleLocationB}>Kittchat Charlottenburg</button></Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position3}>
-                <Popup><button onClick={this.handleLocationC}>Location C</button></Popup>
+                <Popup><button onClick={this.handleLocationC}>Kittchat Kreuzberg</button></Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position4}>
-                <Popup><button onClick={this.handleLocationD}>Location D</button></Popup>
+                <Popup><button onClick={this.handleLocationD}>Kittchat Neukölln</button></Popup>
               </Marker>
             </div>
 
             <div className="location-spot">
               <Marker icon={locationPin} position={position5}>
-                <Popup><button onClick={this.handleLocationE}>Location E</button></Popup>
+                <Popup><button onClick={this.handleLocationE}>Kittchat Prenzlauer Berg</button></Popup>
               </Marker>
             </div>
           </MapContainer>
