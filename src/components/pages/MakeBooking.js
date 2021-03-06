@@ -21,13 +21,12 @@ class MakeBooking extends Component {
               <div>
                 <label>Cafe Location</label><br></br>
                 <select name="cafeLocation">
-                  <option value="location1">Location1</option>
-                  <option value="location2">Location2</option>
-                  <option value="location3">Location3</option>
-                  <option value="location4">Location4</option>
-                  <option value="location5">Location5</option>
+                  <option value="location1">Kittchat Schöneberg</option>
+                  <option value="location2">Kittchat Charlottenburg</option>
+                  <option value="location3">Kittchat Kreuzberg</option>
+                  <option value="location4">Kittchat Neukölln</option>
+                  <option value="location5">Kittchat Prenzlauer Berg</option>
                 </select>
-                {/* <input name="location" type="location" /> */}
               </div>
               <div>
                 <label>Date</label><br></br>

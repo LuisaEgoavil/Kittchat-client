@@ -26,6 +26,7 @@ class Header extends Component {
             {
                 this.props.user ? (
                   <button onClick={this.props.onLogout}>Logout</button>
+                  
 
                 ) : (
                   <>
