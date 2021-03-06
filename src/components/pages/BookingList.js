@@ -4,7 +4,7 @@ class BookingList extends Component {
     render() {
         return (
             <div>
-                <h1>my Reservations</h1>
+                <h1>My Reservations</h1>
                 
             </div>
         )
