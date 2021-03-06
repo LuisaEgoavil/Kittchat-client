@@ -22,7 +22,8 @@ class App extends Component {
 
   state = {
     loggedInUser: null,
-    error: null
+    error: null,
+    reservationId: []
   }
 
 //-----------Sign up-------------------------------------------------//
@@ -130,24 +131,26 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist" render={(routeProps) => {
-            return <BookingList {...routeProps}/>
+            return <BookingList {...routeProps} />
           }} />
           <Route path="/signup" render={(routeProps)=> {
-            return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
+            return <SignUp  onSignUp={this.handleSignUp}{...routeProps} />
           }} />
           <Route path="/booking" render={(routeProps) => {
             return <MakeBooking onBook={this.handleBook}{...routeProps} />
           }} />
           <Route path="/login" render={(routeProps) => {
-            return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
+            return <LogIn onLogIn={this.handleLogIn} {...routeProps} />
           }} />
           <MyMap />
         </Switch>
-
       </div>
     );
   }
 }
-
 export default withRouter(App);
 
+{/* <Route  path="/todos/:todoId" render={(routeProps) => {
+                return <TodoDetail onDelete={this.handleDelete} {...routeProps}/>
+            }} />
+  */}

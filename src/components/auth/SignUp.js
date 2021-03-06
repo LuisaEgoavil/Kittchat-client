@@ -26,7 +26,7 @@ class SignUp extends Component {
               <label>Password</label>
               <input name="password" type="password"/>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Sign Up</button>
             <br></br><br></br>
             
             <GoogleLogin 
