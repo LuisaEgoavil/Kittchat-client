@@ -102,15 +102,6 @@ componentDidMount(){
       })
 }
 
-  // handleChange = (event) => {
-  //   this.setState({
-  //     location: event.target.value
-  //   })
-  // }
-
-  
-
-
   handleSubmit = (event) => {
     event.preventDefault()
     let locationName = event.target.locationName.value
@@ -137,6 +128,8 @@ componentDidMount(){
       .catch((err) => {
         console.log('created failed', err)
       })
+
+
   }
 
 //-------------------------------------------------------------------//
