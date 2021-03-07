@@ -7,7 +7,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import {Link} from 'react-router-dom'
 import L from 'leaflet';
-
+import {Spinner} from 'react-bootstrap'
 
 class Contact extends Component {
 
@@ -38,20 +38,16 @@ class Contact extends Component {
     // this.state.locationToDisplay = 1 // Please never do this
     this.setState({locationToDisplay: 0}) // this causes a rerender
   }
-
   handleLocationB = (locationIndex) => {
     // this.state.locationToDisplay = 1 // Please never do this
     this.setState({locationToDisplay: 1}) // this causes a rerender
   }
-
   handleLocationC = (locationIndex) => {
     this.setState({locationToDisplay: 2}) 
   }
-
   handleLocationD = (locationIndex) => {
     this.setState({locationToDisplay: 3}) 
   }
-
   handleLocationE = (locationIndex) => {
     this.setState({locationToDisplay: 4}) 
   }
@@ -60,9 +56,7 @@ class Contact extends Component {
   // step 5 A rerender happends
   render() {
     const {location, locationToDisplay} = this.state
-
-    if (location.length === 0) return <h1>Loading</h1>
-
+    if (location.length === 0) return <Spinner animation="border" variant="success" /> 
 
     const centerPosition = [52.517510, 13.393847]
     const position1 = [52.503004, 13.429300]
