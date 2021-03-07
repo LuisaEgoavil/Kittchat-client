@@ -15,6 +15,7 @@ import MyMap from "./components/MyMap"
 import BookingList from "./components/pages/BookingList"
 import Header from './components/Header'
 import GoogleLogin from 'react-google-login'
+import './App.css';
 //-------------------------------------------------------------------//
 
 
@@ -89,7 +90,8 @@ class App extends Component {
 //-----------Reservation form-------------------------------------------------//
 
 componentDidMount(){
-  let reservationId = this.props.match.params.reservationId
+  
+  // let reservationId = this.props.match.params.reservationId
   axios.get(`${config.API_URL}/api/reservations`)
       .then((response) => {
         console.log(response, "just chekcing")
@@ -100,6 +102,13 @@ componentDidMount(){
       })
 }
 
+  // handleChange = (event) => {
+  //   this.setState({
+  //     location: event.target.value
+  //   })
+  // }
+
+  
 
 
   handleSubmit = (event) => {
@@ -147,7 +156,7 @@ componentDidMount(){
           <Route path="/contact" component={Contact} />
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist" render={(routeProps) => {
-            return <BookingList {...routeProps}/>
+            return <BookingList onChange={this.handleChange}{...routeProps}/>
           }} />
           <Route path="/signup" render={(routeProps)=> {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>

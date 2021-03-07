@@ -20,9 +20,9 @@ class Header extends Component {
                 <NavDropdown.Item eventKey="4.2"><Link to="/catinfo">Cats</Link></NavDropdown.Item>
               </NavDropdown>
             </li>
-            <li><Link to="/contact">CONTACT</Link></li>|
-            <li><Link to="/reservation">RESERVATION</Link></li>|
-            
+            <li><Link to="/contact">CONTACT</Link></li>
+            <li><Link to="/reservation">RESERVATION</Link></li>
+            <li>
             {
                 this.props.user ? (
                   <button onClick={this.props.onLogout}>Logout</button>
@@ -30,11 +30,12 @@ class Header extends Component {
 
                 ) : (
                   <>
-                  <Link to="/login">Login</Link>|
+                  <Link className="nav-login" to="/login">Login</Link>
                   <Link to="/signup">SignUp</Link>
                   </>
                 )
           }
+          </li>
           
 
           </ul>

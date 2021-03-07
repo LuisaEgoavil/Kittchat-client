@@ -1,19 +1,40 @@
-
+.main-body {
+  padding-top: 6%;
+  margin: 0 auto;
+  width: 98%;
+  text-align: center;
+}
 
 /* -----Header----- */
 .header {
   background-color: rgb(165, 224, 248);
   display: flex;
   justify-content: space-between;
+  padding: 0 10% 0 7%;
+  position: fixed;
+  z-index: 9999;
+  border-bottom: blue;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
+
+.logo img {
+  width: 10%;
+  height: auto;
+}
+
 .header-nav {
-  padding: 0;
+  margin-right: 7%;
+  padding: 2% 0 0 0 ;
   display: flex;
 }
 
 .header-nav li {
   list-style: none;
   text-decoration: none;
+}
+
+.header-nav li:not(:first-child) {
+  padding-left: 8%;
 }
 
 .header-nav li a {
@@ -24,10 +45,18 @@
   padding: 0;
 }
 
-/* -----Home Page */
-/* .home-body {
-  background-image: ;
-} */
+.nav-login {
+  margin-right: 20%;
+}
+
+/* -----Footer page----- */
+.footer {
+  width: 98%;
+  margin: 2% auto;
+  text-align: center;
+}
+
+/* -----Home page----- */
 
 /* -----CatInfo page----- */
 .cats-body {
@@ -43,10 +72,15 @@
 /* -----Contact Page----- */
 .contact-body {
   display: flex;
+  justify-content: center;
+  padding-top: 8%;
 }
+
 .contact-left {
   border: 1px solid;
-  margin-right: 10%;
+  margin-right: 7%;
+  height: 80%;
+  width: 34%;
 }
 
 .contact-right {

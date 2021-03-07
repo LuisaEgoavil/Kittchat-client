@@ -97,8 +97,8 @@ class Contact extends Component {
             <Link to="/reservation"><button type="submit">Reserve here!</button></Link>
           </div>
 
-          <div>
-          <MapContainer style={{width: '700px', height: '500px'}}center={centerPosition} zoom={12} scrollWheelZoom={false}>
+          <div className="contact-right">
+          <MapContainer  style={{width: '550px', height: '460px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
             <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               

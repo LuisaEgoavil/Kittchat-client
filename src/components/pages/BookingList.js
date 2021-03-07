@@ -3,7 +3,7 @@ import axios from 'axios'
 import config from '../../config'
 
 
-class BookingList extends Component {     
+class BookingList extends Component {
     
     state = {
         reservation: {}
@@ -13,6 +13,7 @@ class BookingList extends Component {
         let reservationId = this.props.match.params.reservationId
         axios.get(`${config.API_URL}/api/bookinglist/${reservationId}`)
             .then((response) => {
+                console.log(response.data)
                 this.setState({reservation: response.data})
             })
             .catch(() => {
@@ -20,8 +21,10 @@ class BookingList extends Component {
             })
     }
     render() {
-        const {reservation, locationName} = this.state
+        const {reservation} = this.state
+        
         return (
+            
             <div>
                 <h1>My Reservations</h1>
 
