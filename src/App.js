@@ -22,7 +22,8 @@ class App extends Component {
 
   state = {
     loggedInUser: null,
-    error: null
+    error: null,
+    reservations: []
   }
 
 //-----------Sign up-------------------------------------------------//
@@ -87,29 +88,45 @@ class App extends Component {
 
 //-----------Reservation form-------------------------------------------------//
 
-  handleBook=(event)=> {
+componentDidMount(){
+  let reservationId = this.props.match.params.reservationId
+  axios.get(`${config.API_URL}/api/reservations`)
+      .then((response) => {
+        console.log(response, "just chekcing")
+          this.setState({ reservations: response.data})
+      })
+      .catch(() => {
+          console.log('Detail fetch failed')
+      })
+}
+
+
+
+  handleSubmit = (event) => {
     event.preventDefault()
-    let booking = {
-      locationName: event.target.locationName.value,
-      time: event.target.time.value,
-      date: event.target.date.value,
-      request: event.target.request.value,
-      myUserId: event.target.myUserId.value
-    }
-    axios.post(`${config.API_URL}/api/booking`, booking)
+    let locationName = event.target.locationName.value
+    let date = event.target.date.value
+    let time = event.target.time.value
+    let reservationName = event.target.reservationName.value
+    let description = event.target.description.value
+
+    axios.post(`${config.API_URL}/api/booking`, {
+      locationName: locationName,
+      date: '2021-12-03',
+      time: 14,
+      reservationName: reservationName,
+      description: description,
+    })
       .then((response) => {
         console.log(response)
-          this.setState({
-            loggedInUser: response.data
+        this.setState({
+      reservations: [response.data, ...this.state.reservations]
           }, () => {
-            this.props.history.push('/')
+            this.props.history.push('/bookinglist')
           })
       })
       .catch((err) => {
-        console.log(err)
-          this.setState({
-            error: err.response.data
-          })
+        console.log('created failed', err)
       })
   }
 
@@ -136,7 +153,7 @@ class App extends Component {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
           }} />
           <Route path="/booking" render={(routeProps) => {
-            return <MakeBooking onBook={this.handleBook}{...routeProps} />
+            return <MakeBooking onAdd={this.handleSubmit}{...routeProps} />
           }} />
           <Route path="/login" render={(routeProps) => {
             return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
