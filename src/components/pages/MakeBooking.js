@@ -15,11 +15,7 @@ class MakeBooking extends Component {
     
         <div className="main-body booking-body">
           <div className="booking-right">
-<<<<<<< HEAD
-            <form className="book-form">
-=======
             <form onSubmit={this.props.onAdd} className="book-form">
->>>>>>> origin/lupita
               <div>
                 <label>Cafe Location</label><br></br>
                 <select name="locationName">
