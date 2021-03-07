@@ -112,8 +112,8 @@ componentDidMount(){
 
     axios.post(`${config.API_URL}/api/booking`, {
       locationName: locationName,
-      date: '2021-12-03',
-      time: 14,
+      date: date,
+      time: time,
       reservationName: reservationName,
       description: description,
     })
@@ -133,7 +133,7 @@ componentDidMount(){
 //-------------------------------------------------------------------//
 
   render () {
-    const{loggedInUser, error} = this.state
+    const{loggedInUser, error, reservations} = this.state
 
     return (
       <div className="App">

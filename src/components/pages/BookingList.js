@@ -1,29 +1,35 @@
 import React, { Component } from 'react'
-import config from '../../config'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import config from '../../config'
 
-class BookingList extends Component {
-    
-   state = {
-       reservations: {}
-   }
 
+class BookingList extends Component {     
     
+    state = {
+        reservation: {}
+    }
+
+    componentDidMount(){
+        let reservationId = this.props.match.params.reservationId
+        axios.get(`${config.API_URL}/api/bookinglist/${reservationId}`)
+            .then((response) => {
+                this.setState({reservation: response.data})
+            })
+            .catch(() => {
+                console.log('details failed')
+            })
+    }
     render() {
-
-         const {reservations} = this.props
-         console.log(this.props)
-
+        const {reservation, locationName} = this.state
         return (
             <div>
                 <h1>My Reservations</h1>
 
-              {/* <p>cafename{locationName}</p>  */}
-              <p>date{date.data}</p>
-              <p>time{time.data}</p>
-             <p>name{reservationName.data}</p>
-              <p>request{description.data}</p>
+              <p>cafename{reservation.locationName}</p> 
+              <p>date</p>
+              <p>time</p>
+              <p>name</p>
+              <p>request</p>
 
                 
             </div>
