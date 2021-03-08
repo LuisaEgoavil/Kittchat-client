@@ -1,7 +1,5 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import Footer from '../Footer'
-import MyMap from '../MyMap'
 import config from '../../config'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -128,7 +126,6 @@ class Contact extends Component {
           </MapContainer>
         </div>
         </div>
-        <Footer />
       </div>
     )
   }

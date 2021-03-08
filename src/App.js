@@ -12,7 +12,6 @@ import LogIn from "./components/auth/LogIn";
 import axios from "axios";
 import config from "./config";
 import MakeBooking from "./components/pages/MakeBooking";
-import MyMap from "./components/MyMap"
 import BookingList from "./components/pages/BookingList"
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -195,7 +194,6 @@ componentDidMount(){
           <Route path="/login" render={(routeProps) => {
             return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
           }} />
-          <MyMap />
         </Switch>
         <Footer />
       </div>

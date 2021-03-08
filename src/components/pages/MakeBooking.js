@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from "../Footer"
 
 class MakeBooking extends Component {
 
@@ -28,7 +27,7 @@ class MakeBooking extends Component {
               </div>
               <div>
                 <label>Time</label><br></br>
-                <input name="time" type="time" />
+                <input name="time" type="time" step="1800" />
               </div>
               <div>
                 <label>Name</label><br></br>
@@ -43,7 +42,6 @@ class MakeBooking extends Component {
 
           </div>
         </div>
-        <Footer />
       </div>
     )
   }

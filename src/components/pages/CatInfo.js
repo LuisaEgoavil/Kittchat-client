@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from '../Footer'
 import {Card, Accordion, Button } from 'react-bootstrap'
 
  
@@ -125,7 +124,6 @@ class CatInfo extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     )
   }

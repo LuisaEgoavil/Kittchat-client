@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from '../Footer'
 
 class Cafe extends Component {
 
