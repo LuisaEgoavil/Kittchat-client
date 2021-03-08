@@ -5,6 +5,7 @@ import Home from "./components/pages/Home";
 import Cafe from "./components/pages/Cafe";
 import CatInfo from "./components/pages/CatInfo";
 import Contact from "./components/pages/Contact";
+import Profile from "./components/pages/Profile"
 import Reservation from "./components/pages/Reservation";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
@@ -101,8 +102,21 @@ componentDidMount(){
       .catch(() => {
           console.log('Detail fetch failed')
       })
+      //everytime we refresh the page the user will stay logged in
+      if(!this.state.loggedInUser) {
+        axios.get(`${config.API_URL}/api/user`, {withCredentials: true})
+          .then((response) => {
+            this.setState({
+              loggedInUser: response.data
+            })
+          })
+          .catch(() => {
+
+          })
+      }
 }
 
+//-------------------------------------------------------------------//
   handleSubmit = (event) => {
     event.preventDefault()
     let locationName = event.target.locationName.value
@@ -133,7 +147,24 @@ componentDidMount(){
 
 
   }
-
+//-------------------------------------------------------------------//
+  handleDelete = (reservationId) => {
+  
+    axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`)
+      .then(() => {
+        let filteredReservations = this.state.reservations.filter((reservation) => {
+          return reservation._id !== reservationId
+           })
+            this.setState({
+              reservations: filteredReservations
+            }, () => {
+              this.props.history.push('/profile')
+            })
+      })
+      .catch((err) => {
+        console.log('delete failed'. err)
+      })
+  }
 //-------------------------------------------------------------------//
 
   render () {
@@ -149,10 +180,12 @@ componentDidMount(){
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
           <Route path="/contact" component={Contact} />
+          <Route path="/profile" component={Profile} />
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist/:id" render={(routeProps) => {
-            return <BookingList onChange={this.handleChange}{...routeProps}/>
+            return <BookingList user={loggedInUser} onDelete={this.handleDelete} {...routeProps}/>
           }} />
+
           <Route path="/signup" render={(routeProps)=> {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
           }} />
