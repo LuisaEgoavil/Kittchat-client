@@ -62,11 +62,6 @@
 }
 
 /* -----Home page----- */
- /* .home-body {
-  background-image: url("cat-bg.jpg");
-   background-color: rgb(255, 255, 255, 0.8); 
-  background-blend-mode: lighten; 
-}  */
 
 .home-inside {
   margin: 10% 20%;
@@ -75,8 +70,40 @@
   background-color: rgba(0, 0, 0, 0.20);
 }
 
+/* -----cafe page----- */
+.cafe-body img {
+  width: 30%;
+  height: auto;
+}
 
-/* -----CatInfo page----- */
+.menu-detail {
+  display: flex;
+}
+
+.menu-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-wrap:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.menu-block {
+  border: 1px solid;
+  width: 40%;
+  text-align: center;
+  
+}
+
+.menu-wrap img {
+  width: 40%;
+  height: auto;
+}
+
+
+
+/* -----cat page----- */
 .wrap-cats {
   display: flex;
   flex-wrap: wrap;
