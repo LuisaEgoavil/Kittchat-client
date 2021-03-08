@@ -80,6 +80,10 @@
   display: flex;
 }
 
+.menu-detail p {
+  text-align: center;
+}
+
 .menu-wrap {
   display: flex;
   justify-content: center;
@@ -92,8 +96,6 @@
 .menu-block {
   border: 1px solid;
   width: 40%;
-  text-align: center;
-  
 }
 
 .menu-wrap img {
