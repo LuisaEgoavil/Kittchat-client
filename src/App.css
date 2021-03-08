@@ -62,11 +62,11 @@
 }
 
 /* -----Home page----- */
-/* .home-body {
-  background-image: url("");
-  background-color: rgb(255, 255, 255, 0.8);
-  background-blend-mode: lighten;
-} */
+ /* .home-body {
+  background-image: url("cat-bg.jpg");
+   background-color: rgb(255, 255, 255, 0.8); 
+  background-blend-mode: lighten; 
+}  */
 
 .home-inside {
   margin: 10% 20%;
