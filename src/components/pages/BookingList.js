@@ -25,6 +25,8 @@ class BookingList extends Component {
           
     render() {
         const {reservation} = this.state
+        const {onDelete} = this.props
+        console.log(reservation)
         return (
             <div>
                 <h1>My Reservations</h1>
@@ -34,6 +36,7 @@ class BookingList extends Component {
                     <p>Time <br/>{reservation.time}</p>
                     <p>Special request <br/>{reservation.description}</p>
                 <Link to="/profile"><button>Reservation's history</button></Link>
+               <button onClick={() => {onDelete(reservation._id)}}>Cancel </button>
             </div>
         )
     }
