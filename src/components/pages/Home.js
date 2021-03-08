@@ -7,7 +7,10 @@ class Home extends Component {
     return (
       <div >
         <div className="main-body home-body">
-          <p>Welcome to Kittchat Cafe! We have many cute and friendly cats in each cafe.</p>
+          <div className="home-inside">
+            <h1>Kittchat</h1>
+            <p>Welcome to Kittchat Cafe!<br />We have many cute and friendly cats in each cafe.</p>
+          </div>
         </div>
         <Footer />
       </div>

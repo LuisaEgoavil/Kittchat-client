@@ -12,7 +12,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-      
+        <div className="main-body sign-body">
           <form onSubmit={this.props.onSignUp}>
             <div className="form-group">
               <label>Username</label>
@@ -27,7 +27,6 @@ class SignUp extends Component {
               <input name="password" type="password"/>
             </div>
             <button type="submit">Sign Up</button>
-            <br></br><br></br>
             
             <GoogleLogin 
               clientId="485417191125-mla07ur1253tkh1lhepvdqb17hrlofs2.apps.googleusercontent.com"
@@ -37,14 +36,9 @@ class SignUp extends Component {
               isSignedIn={true}
               cookiePolicy={'single_host_origin'}
             />
-             
-
-        
-
-
-
           </form>
-          <Footer />
+        </div>
+        <Footer />
       </div>
     )
   }

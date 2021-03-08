@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .main-body {
   padding-top: 6%;
   margin: 0 auto;
@@ -57,17 +62,45 @@
 }
 
 /* -----Home page----- */
+/* .home-body {
+  background-image: url("");
+  background-color: rgb(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+} */
+
+.home-inside {
+  margin: 10% 20%;
+  padding: 6% 10%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.20);
+}
+
 
 /* -----CatInfo page----- */
-.cats-body {
+.wrap-cats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .cats-cards {
-  margin: 0 10%;
+  margin: 0;
+  width: 45%;
 }
+
+.cats-cards img {
+  display: inline-block;
+  width: 80%;
+  height: auto;
+  vertical-align: top;
+}
+
+.card,
+.accordion {
+  width: 90%;
+  margin: 0 auto;
+}
+
 
 /* -----Contact Page----- */
 .contact-body {
@@ -85,6 +118,13 @@
 
 .contact-right {
   border: 1px solid;
+}
+
+/* -----resevation page----- */
+.reservations-body button {
+  margin: 2% 4%;
+  padding: 1% 2%;
+  font-size: 20px;
 }
 
 /* -----Booking Page----- */
