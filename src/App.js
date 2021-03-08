@@ -5,6 +5,7 @@ import Home from "./components/pages/Home";
 import Cafe from "./components/pages/Cafe";
 import CatInfo from "./components/pages/CatInfo";
 import Contact from "./components/pages/Contact";
+import Profile from "./components/pages/Profile"
 import Reservation from "./components/pages/Reservation";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
@@ -148,6 +149,7 @@ componentDidMount(){
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
           <Route path="/contact" component={Contact} />
+          <Route path="/profile" component={Profile} />
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList onChange={this.handleChange}{...routeProps}/>

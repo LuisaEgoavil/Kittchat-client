@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import config from '../../config'
+import {Link} from 'react-router-dom'
 
 
 class BookingList extends Component {
@@ -27,12 +28,12 @@ class BookingList extends Component {
         return (
             <div>
                 <h1>My Reservations</h1>
-                    <p>cafename {reservation.locationName}</p> 
-                    <p>date {reservation.date}</p>
-                    <p>time {reservation.time}</p>
-                    <p>name {reservation.reservationName}</p>
-                    <p>request {reservation.description}</p>
-                
+                    <p>Cafe Location <br/>{reservation.locationName}</p>
+                    <p>Name <br/>{reservation.reservationName}</p>
+                    <p>Date <br/>{reservation.date}</p>
+                    <p>Time <br/>{reservation.time}</p>
+                    <p>Special request <br/>{reservation.description}</p>
+                <Link to="/profile"><button>Reservation's history</button></Link>
             </div>
         )
     }
