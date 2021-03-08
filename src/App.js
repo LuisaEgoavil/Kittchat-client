@@ -119,10 +119,11 @@ componentDidMount(){
     })
       .then((response) => {
         console.log(response)
+
         this.setState({
       reservations: [response.data, ...this.state.reservations]
           }, () => {
-            this.props.history.push('/bookinglist')
+            this.props.history.push(`/bookinglist/${response.data._id}`)
           })
       })
       .catch((err) => {
@@ -148,7 +149,7 @@ componentDidMount(){
           <Route path="/catinfo" component={CatInfo} />
           <Route path="/contact" component={Contact} />
           <Route path="/reservation" component={Reservation} />
-          <Route path="/bookinglist" render={(routeProps) => {
+          <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList onChange={this.handleChange}{...routeProps}/>
           }} />
           <Route path="/signup" render={(routeProps)=> {
