@@ -29,6 +29,7 @@ class BookingList extends Component {
         console.log(reservation)
         return (
             <div>
+            <div class="main-body">
                 <h1>My Reservations</h1>
                     <p>Cafe Location <br/>{reservation.locationName}</p>
                     <p>Name <br/>{reservation.reservationName}</p>
@@ -37,6 +38,7 @@ class BookingList extends Component {
                     <p>Special request <br/>{reservation.description}</p>
                 <Link to="/profile"><button>Reservation's history</button></Link>
                <button onClick={() => {onDelete(reservation._id)}}>Cancel </button>
+            </div>
             </div>
         )
     }
