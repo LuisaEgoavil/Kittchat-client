@@ -37,7 +37,7 @@ class App extends Component {
       email: event.target.email.value,
       password: event.target.password.value
     }
-    axios.post(`${config.API_URL}/api/signup`, user)
+    axios.post(`${config.API_URL}/api/signup`, user, {withCredentials: true})
       .then((response) => {
         console.log(response)
           this.setState({
@@ -93,7 +93,7 @@ class App extends Component {
 componentDidMount(){
   
   // let reservationId = this.props.match.params.reservationId
-  axios.get(`${config.API_URL}/api/reservations`)
+  axios.get(`${config.API_URL}/api/reservations`, {withCredentials: true})
       .then((response) => {
         console.log(response, "just chekcing")
           this.setState({ reservations: response.data})
@@ -130,7 +130,7 @@ componentDidMount(){
       time: time,
       reservationName: reservationName,
       description: description,
-    })
+    }, {withCredentials: true})
       .then((response) => {
         console.log(response)
 
@@ -149,7 +149,7 @@ componentDidMount(){
 //-------------------------------------------------------------------//
   handleDelete = (reservationId) => {
   
-    axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`)
+    axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
       .then(() => {
         let filteredReservations = this.state.reservations.filter((reservation) => {
           return reservation._id !== reservationId

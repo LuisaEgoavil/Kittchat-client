@@ -86,7 +86,6 @@ class Contact extends Component {
             <p>{location[locationToDisplay].phoneNumber}</p>
             <h2>Email</h2>
             <p>{location[locationToDisplay].email}</p>
-            <Link to="/reservation"><button type="submit">Reserve here!</button></Link>
           </div>
 
           <div className="contact-right">

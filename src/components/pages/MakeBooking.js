@@ -27,7 +27,7 @@ class MakeBooking extends Component {
               </div>
               <div>
                 <label>Time</label><br></br>
-                <input name="time" type="time" step="1800" />
+                <input name="time" type="time" />
               </div>
               <div>
                 <label>Name</label><br></br>

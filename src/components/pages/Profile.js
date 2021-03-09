@@ -10,15 +10,11 @@ class Profile extends Component {
 
     componentDidMount(){
         //let reservationId = this.props.match.params.id
-        axios.get(`${config.API_URL}/api/profile`)
+        axios.get(`${config.API_URL}/api/profile`,{withCredentials: true})
             .then((response) =>{
                 console.log(response.data)
                 this.setState({
-                    locationName: response.data,
-                    time: response.data, 
-                    date: response.data,
-                    description: response.data,
-                    reservationName: response.data
+                    reservations: response.data
                 })
             })
             .catch(() => {
@@ -26,11 +22,13 @@ class Profile extends Component {
             })
     }
     render() {
-        const {reservation, locationName, time, date, description, reservationName} = this.state
+        const {reservations} = this.state
         
         return (
             <div>
-            {/* {
+            <div className="main-body">
+                <h1>profile</h1>
+            {
                 reservations.map((reservation, index) => {
                     return <div class="main-body" key={index}>
                     <h1>Profile</h1>
@@ -39,9 +37,10 @@ class Profile extends Component {
                     {reservation.locationName}
                 </div>  
                 })
-            } */}
+            }
 
-            {reservation.time}
+            {/* {reservation.time} */}
+            </div>
             </div>
             
         )
