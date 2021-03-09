@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from '../Footer'
 
 class Home extends Component {
   render() {
@@ -11,7 +10,6 @@ class Home extends Component {
             <p>Welcome to Kittchat Cafe!<br />We have many cute and friendly cats in each cafe.</p>
           </div>
         </div>
-        <Footer />
       </div>
     )
   }

@@ -12,25 +12,19 @@ import LogIn from "./components/auth/LogIn";
 import axios from "axios";
 import config from "./config";
 import MakeBooking from "./components/pages/MakeBooking";
-import MyMap from "./components/MyMap"
 import BookingList from "./components/pages/BookingList"
 import Header from './components/Header'
 import Footer from './components/Footer'
 import GoogleLogin from 'react-google-login'
 import './App.css';
 //-------------------------------------------------------------------//
-
-
 class App extends Component {
-
   state = {
     loggedInUser: null,
     error: null,
     reservations: []
   }
-
 //-----------Sign up-------------------------------------------------//
-
   handleSignUp=(event)=> {
     event.preventDefault()
     let user = {
@@ -38,7 +32,7 @@ class App extends Component {
       email: event.target.email.value,
       password: event.target.password.value
     }
-    axios.post(`${config.API_URL}/api/signup`, user)
+    axios.post(`${config.API_URL}/api/signup`, user, {withCredentials: true})
       .then((response) => {
         console.log(response)
           this.setState({
@@ -54,9 +48,7 @@ class App extends Component {
           })
       })
   }
-
 //-----------Login-------------------------------------------------//
-
   handleLogIn = (event) => {
     event.preventDefault()
     let user = {
@@ -75,9 +67,7 @@ class App extends Component {
         console.log('something went wrong', err)
       })
   }
-
 //-----------Logout-------------------------------------------------//
-
   handleLogout = () => {
     axios.post(`${config.API_URL}/api/logout`, {}, {withCredentials: true})
   .then(() => {
@@ -88,13 +78,10 @@ class App extends Component {
       })
   })
 }
-
 //-----------Reservation form-------------------------------------------------//
-
 componentDidMount(){
-  
   // let reservationId = this.props.match.params.reservationId
-  axios.get(`${config.API_URL}/api/reservations`)
+  axios.get(`${config.API_URL}/api/reservations`, {withCredentials: true})
       .then((response) => {
         console.log(response, "just chekcing")
           this.setState({ reservations: response.data})
@@ -111,11 +98,9 @@ componentDidMount(){
             })
           })
           .catch(() => {
-
           })
       }
 }
-
 //-------------------------------------------------------------------//
   handleSubmit = (event) => {
     event.preventDefault()
@@ -124,17 +109,15 @@ componentDidMount(){
     let time = event.target.time.value
     let reservationName = event.target.reservationName.value
     let description = event.target.description.value
-
     axios.post(`${config.API_URL}/api/booking`, {
       locationName: locationName,
       date: date,
       time: time,
       reservationName: reservationName,
       description: description,
-    })
+    }, {withCredentials: true})
       .then((response) => {
         console.log(response)
-
         this.setState({
       reservations: [response.data, ...this.state.reservations]
           }, () => {
@@ -144,13 +127,10 @@ componentDidMount(){
       .catch((err) => {
         console.log('created failed', err)
       })
-
-
   }
 //-------------------------------------------------------------------//
   handleDelete = (reservationId) => {
-  
-    axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`)
+    axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
       .then(() => {
         let filteredReservations = this.state.reservations.filter((reservation) => {
           return reservation._id !== reservationId
@@ -166,15 +146,11 @@ componentDidMount(){
       })
   }
 //-------------------------------------------------------------------//
-
   render () {
     const{loggedInUser, error, reservations} = this.state
-
     return (
       <div className="App">
-
       <Header onLogout={this.handleLogout} user={loggedInUser}/>
-
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/cafe" component={Cafe} />
@@ -185,7 +161,6 @@ componentDidMount(){
           <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList user={loggedInUser} onDelete={this.handleDelete} {...routeProps}/>
           }} />
-
           <Route path="/signup" render={(routeProps)=> {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
           }} />
@@ -195,13 +170,10 @@ componentDidMount(){
           <Route path="/login" render={(routeProps) => {
             return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
           }} />
-          <MyMap />
         </Switch>
         <Footer />
       </div>
     );
   }
 }
-
 export default withRouter(App);
-

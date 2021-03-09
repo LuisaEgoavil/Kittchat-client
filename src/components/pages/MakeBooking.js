@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from "../Footer"
 
 class MakeBooking extends Component {
 
@@ -43,7 +42,6 @@ class MakeBooking extends Component {
 
           </div>
         </div>
-        <Footer />
       </div>
     )
   }

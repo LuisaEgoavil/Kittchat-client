@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Footer from '../Footer'
 import LogIn from '../auth/LogIn'
 import SignUp from '../auth/SignUp'
 import {Link} from 'react-router-dom'
@@ -16,7 +15,6 @@ class Reservation extends Component {
           <Link to='/login'><button>Log In</button></Link>
           <Link to='/signup'><button>Sign Up</button></Link>
         </div>
-        <Footer />
         
       </div>
     )
