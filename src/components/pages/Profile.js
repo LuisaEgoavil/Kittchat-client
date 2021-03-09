@@ -4,41 +4,41 @@ import axios from 'axios'
 import config from '../../config'
 
 class Profile extends Component {
-    state = {
-        reservations : []
-    }
+  state = {
+    reservations : []
+  }
 
-    componentDidMount(){
-        //let reservationId = this.props.match.params.id
-        axios.get(`${config.API_URL}/api/profile`,{withCredentials: true})
-            .then((response) =>{
-                console.log(response.data)
-                this.setState({
-                    reservations: response.data
-                })
-            })
-            .catch(() => {
-                console.log('error while getting data')
-            })
-    }
+  componentDidMount(){
+    //let reservationId = this.props.match.params.id
+    axios.get(`${config.API_URL}/api/profile`,{withCredentials: true})
+      .then((response) =>{
+        console.log(response.data)
+        this.setState({
+        reservations: response.data
+        })
+      })
+      .catch(() => {
+        console.log('error while getting data')
+      })
+  }
 
-    handleDelete = (reservationId) => {
-  
-        axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
-          .then(() => {
-            let filteredReservations = this.state.reservations.filter((reservation) => {
-              return reservation._id !== reservationId
-              })
-                this.setState({
-                  reservations: filteredReservations
-                }, () => {
-                  this.props.history.push('/profile')
-                })
+  handleDelete = (reservationId) => {
+
+    axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
+      .then(() => {
+        let filteredReservations = this.state.reservations.filter((reservation) => {
+          return reservation._id !== reservationId
           })
-          .catch((err) => {
-            console.log('delete failed'. err)
-          })
-      }
+            this.setState({
+              reservations: filteredReservations
+            }, () => {
+              this.props.history.push('/profile')
+            })
+      })
+      .catch((err) => {
+        console.log('delete failed'. err)
+      })
+    }
 
 //---------------------------------------------
 
@@ -53,7 +53,7 @@ class Profile extends Component {
             {
                 reservations.map((reservation, index) => {
                     return <div class="main-body" key={index}>
-                    <p>Location: {reservation.locationName}</p>
+                    <p>Location: {reservation.locationName.cafeName}</p>
                     <p>Name: {reservation.name}</p>
                     <p>Date: {reservation.date}</p>
                     <p>Time: {reservation.time}</p>
