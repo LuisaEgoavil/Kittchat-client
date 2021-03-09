@@ -24,11 +24,10 @@ class Profile extends Component {
         return (
             <div>
             <div className="main-body">
-                <h1>profile</h1>
+                <h1>Profile</h1>
             {
                 reservations.map((reservation, index) => {
                     return <div class="main-body" key={index}>
-                    <h1>Profile</h1>
                     {reservation.time}
                     {reservation.date}
                     {reservation.locationName}

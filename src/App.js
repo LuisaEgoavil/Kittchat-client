@@ -103,6 +103,7 @@ componentDidMount(){
 }
 //-------------------------------------------------------------------//
   handleSubmit = (event) => {
+    console.log(event)
     event.preventDefault()
     let locationName = event.target.locationName.value
     let date = event.target.date.value
