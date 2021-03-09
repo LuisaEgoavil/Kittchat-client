@@ -26,6 +26,7 @@ class BookingList extends Component {
     render() {
         const {reservation} = this.state
         const {onDelete} = this.props
+        
         if (!reservation) return <h1>Loading</h1>
         return (
             <div>

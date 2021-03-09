@@ -26,8 +26,6 @@ class Header extends Component {
             {
                 this.props.user ? (
                   <button onClick={this.props.onLogout}>Logout</button>
-                  
-
                 ) : (
                   <>
                   <Link className="nav-login" to="/login">Login</Link>
