@@ -21,8 +21,30 @@ class Profile extends Component {
                 console.log('error while getting data')
             })
     }
+
+    handleDelete = (reservationId) => {
+  
+        axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
+          .then(() => {
+            let filteredReservations = this.state.reservations.filter((reservation) => {
+              return reservation._id !== reservationId
+              })
+                this.setState({
+                  reservations: filteredReservations
+                }, () => {
+                  this.props.history.push('/profile')
+                })
+          })
+          .catch((err) => {
+            console.log('delete failed'. err)
+          })
+      }
+
+//---------------------------------------------
+
     render() {
         const {reservations} = this.state
+        // const {onDelete} = this.props
         
         return (
             <div>
@@ -31,15 +53,16 @@ class Profile extends Component {
             {
                 reservations.map((reservation, index) => {
                     return <div class="main-body" key={index}>
-                    <h1>Profile</h1>
-                    {reservation.time}
-                    {reservation.date}
-                    {reservation.locationName}
+                    <p>Location: {reservation.locationName}</p>
+                    <p>Name: {reservation.name}</p>
+                    <p>Date: {reservation.date}</p>
+                    <p>Time: {reservation.time}</p>
+                    <p>Request: {reservation.description}</p>
+                    <button onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
                 </div>  
                 })
             }
 
-            {/* {reservation.time} */}
             </div>
             </div>
             
