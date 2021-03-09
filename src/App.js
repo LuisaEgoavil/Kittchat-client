@@ -135,7 +135,7 @@ componentDidMount(){
       .then(() => {
         let filteredReservations = this.state.reservations.filter((reservation) => {
           return reservation._id !== reservationId
-           })
+          })
             this.setState({
               reservations: filteredReservations
             }, () => {
@@ -146,7 +146,9 @@ componentDidMount(){
         console.log('delete failed'. err)
       })
   }
-//-------------------------------------------------------------------//
+
+//-------------------------------------------------------------------
+
   render () {
     const{loggedInUser, error, reservations} = this.state
     return (
@@ -157,7 +159,9 @@ componentDidMount(){
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
           <Route path="/contact" component={Contact} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile" render={ (routeProps) => {
+            return <Profile user={loggedInUser} onDelete={this.handleDelete}{...routeProps}/>
+          }}/>
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList user={loggedInUser} onDelete={this.handleDelete} {...routeProps}/>
