@@ -4,7 +4,8 @@ class Error extends Component {
   render() {
     return (
       <div>
-        
+        <h1>Oops</h1>
+        {/* <img /> */}
       </div>
     )
   }
