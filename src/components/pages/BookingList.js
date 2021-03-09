@@ -36,7 +36,7 @@ class BookingList extends Component {
                     {/* <p>Date <br/>{reservation.date}</p> */}
                     <p>Time <br/>{reservation.time}</p>
                     <p>Special request <br/>{reservation.description}</p>
-                <Link to="/profile"><button>Reservation's history</button></Link>
+                <Link to="/profile"><button>Profile</button></Link>
                <button onClick={() => {onDelete(reservation._id)}}>Cancel </button>
             </div>
             </div>
