@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 class BookingList extends Component {
     
     state = {
-        reservation: {}
+        reservation: null
     }
 
     componentDidMount(){
@@ -26,14 +26,14 @@ class BookingList extends Component {
     render() {
         const {reservation} = this.state
         const {onDelete} = this.props
-        console.log(reservation)
+        if (!reservation) return <h1>Loading</h1>
         return (
             <div>
             <div class="main-body">
-                <h1>My Reservations</h1>
-                    <p>Cafe Location <br/>{reservation.locationName}</p>
+                <h1>Reservation confirmation</h1>
+                    <p>Cafe Location <br/>{reservation.locationName.cafeName}</p>
                     <p>Name <br/>{reservation.reservationName}</p>
-                    <p>Date <br/>{reservation.date}</p>
+                    {/* <p>Date <br/>{reservation.date}</p> */}
                     <p>Time <br/>{reservation.time}</p>
                     <p>Special request <br/>{reservation.description}</p>
                 <Link to="/profile"><button>Reservation's history</button></Link>
