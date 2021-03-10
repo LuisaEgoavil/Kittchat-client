@@ -4,12 +4,12 @@ import '../App.css';
 import { NavDropdown} from "react-bootstrap";
 
 class Header extends Component {
- 
+
   render() {
     
     return (
       <div>
-        <div className="header" style={{backgroundImage: `url(/images/bg2.jpg)`,backgroundSize: "cover",backgroundPosition:"top",backgroundRepeat:'no-repeat',}}>
+        <div className="header">
           <div className="logo">
             <Link to="/"><img src="images/logo-kittchat.png" alt="logo" width="100"/></Link>
           </div>

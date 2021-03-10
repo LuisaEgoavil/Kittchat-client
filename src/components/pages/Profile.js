@@ -79,29 +79,27 @@ handleEditReservation = (reservationId) => {
         // const {onDelete} = this.props
         
         return (
-            <div>
-            <div className="main-body">
-                <h1>Profile</h1><br/>
-               <Link to="/booking"><button>Click here to make a reservation</button></Link> 
+          <div>
+            <div className="main-body profile-wrapper" style={{backgroundImage: `url(/images/cafe-bg2.jpg)`,backgroundSize: "cover",backgroundPosition:"center", backgroundRepeat:'repeat'}}>
+              <h1>Profile</h1><br/>
+              <Link to="/booking"><button className="reservation-btn">Click here to make a reservation</button></Link> 
 
             {
-                reservations.map((reservation, index) => {
-                    return <div class="main-body" key={index}>
-                    <p>Location: {reservation.locationName.cafeName}</p>
-                    <p>{reservation.locationName.address}</p>
-                    <p>Name: {reservation.reservationName}</p>
-                    <p>Date: {reservation.date}</p>
-                    <p>Time: {reservation.time}</p>
-                    <p>Request: {reservation.description}</p>
-                    <button onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
-                    <button onClick={() => {this.handleEditReservation(reservation)}}>Change details</button>
-
+              reservations.map((reservation, index) => {
+                return <div className="main-body profile-body" key={index}>
+                <p><strong>Location:</strong> {reservation.locationName.cafeName}</p>
+                <p><strong>Address:</strong> {reservation.locationName.address}</p>
+                <p><strong>Name:</strong> {reservation.name}</p>
+                <p><strong>Date:</strong> {reservation.date}</p>
+                <p><strong>Time:</strong> {reservation.time}</p>
+                <p><strong>Request:</strong> {reservation.description}</p>
+                <button className="delete-btn" onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
                 </div>  
                 })
             }
 
             </div>
-            </div>
+          </div>
         )
     }
 }
