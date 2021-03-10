@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import config from '../../config'
+
 class Profile extends Component {
   state = {
-    reservations : [],
-    reservation: {}
+    reservations : []
   }
 
   componentDidMount(){
@@ -53,11 +53,11 @@ handleEditReservation = (reservationId) => {
     .then(() => {
       let newReservations = this.state.reservations.map((singleReservation) => {
           if(reservation._id === singleReservation._id) {
-            singleReservation.locationName = reservation.locationName
-            singleReservation.time = reservation.time
-            singleReservation.date = reservation.date
-            singleReservation.reservationName = reservation.reservationName
-            singleReservation.description = reservation.description
+            singleReservation.locationName = reservations.locationName
+            singleReservation.time = reservations.time
+            singleReservation.date = reservations.date
+            singleReservation.reservationName = reservations.reservationName
+            singleReservation.description = reservations.description
           }
           return singleReservation
       })
@@ -89,11 +89,15 @@ handleEditReservation = (reservationId) => {
                 return <div className="main-body profile-body" key={index}>
                 <p><strong>Location:</strong> {reservation.locationName.cafeName}</p>
                 <p><strong>Address:</strong> {reservation.locationName.address}</p>
-                <p><strong>Name:</strong> {reservation.name}</p>
+                <p><strong>Phone Number:</strong> {reservation.locationName.phoneNumber}</p>
+                <p><strong>Opening Hour:</strong> {reservation.locationName.hours}</p>
+                <p><strong>Email:</strong> {reservation.locationName.email}</p>
+                <p><strong>Name:</strong> {reservation.reservationName}</p>
                 <p><strong>Date:</strong> {reservation.date}</p>
                 <p><strong>Time:</strong> {reservation.time}</p>
                 <p><strong>Request:</strong> {reservation.description}</p>
                 <button className="delete-btn" onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
+                <button onClick={() => {this.handleEditReservation(reservation._id)}}>Change</button>
                 </div>  
                 })
             }

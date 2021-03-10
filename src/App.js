@@ -222,7 +222,7 @@ handleEditReservation = (reservation) => {
           <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList user={loggedInUser} onDelete={this.handleDelete} {...routeProps}/>
           }} />
-          <Route path="/profile/:id/edit" render={(reouteProps) => {
+          <Route path="/profile/:id/edit" render={(routeProps) => {
             return <EditForm onEdit={this.handleEditReservation} {...routeProps} />
           }} />
           <Route path="/signup" render={(routeProps)=> {
