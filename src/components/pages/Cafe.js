@@ -32,6 +32,10 @@ class Cafe extends Component {
                       <p>Mocha</p>
                       <p>€ 4.00</p>
                     </span>
+                    <span className="menu-detail">
+                      <p>Hot Chocolate</p>
+                      <p>€ 4.00</p>
+                    </span>
                   </div>
                   <img src="/images/cafe2.png" alt="cats" />
                 </div>
@@ -41,19 +45,27 @@ class Cafe extends Component {
                   <div className="menu-block">
                     <h2>Tea</h2>
                     <span className="menu-detail">
-                    <p>Sweet Ginger Peach</p>
-                    <p>€ 3.00</p>
-                  </span>
+                      <p>Sweet Ginger Peach</p>
+                      <p>€ 3.00</p>
+                    </span>
                     <span className="menu-detail">
-                    <p>HoneyBush Caramel</p>
-                    <p>€ 3.00</p>
-                  </span>
+                      <p>HoneyBush Caramel</p>
+                      <p>€ 3.00</p>
+                    </span>
                     <span className="menu-detail">
-                    <p>Peach Mango</p>
-                    <p>€ 3.00</p>
-                  </span>
+                      <p>Green Tea</p>
+                      <p>€ 2.50</p>
+                    </span>
+                    <span className="menu-detail">
+                      <p>English Breackfast Tea</p>
+                      <p>€ 3.00</p>
+                    </span>
+                    <span className="menu-detail">
+                      <p>Chamomile tea</p>
+                      <p>€ 4.50</p>
+                    </span>
                   </div>
-                  <img src="/images/cafe2.png" alt="cats" />
+                    <img src="/images/cafe4.jpg" alt="cafetea" />
                 </div>
 
                 
@@ -73,15 +85,15 @@ class Cafe extends Component {
                       <p>€ 2.00</p>
                     </span>
                     <span className="menu-detail">
-                      <p>Green Tea</p>
+                      <p>Peach Mango</p>
+                      <p>€ 3.50</p>
+                    </span>
+                    <span className="menu-detail">
+                      <p>Fresh Orange juice</p>
                       <p>€ 2.50</p>
                     </span>
                     <span className="menu-detail">
-                      <p>Lemon Tea</p>
-                      <p>€ 2.50</p>
-                    </span>
-                    <span className="menu-detail">
-                      <p>Frizzy Lychee</p>
+                      <p>Passion frui soda</p>
                       <p>€ 4.00</p>
                     </span>
                     <span className="menu-detail">
@@ -89,7 +101,7 @@ class Cafe extends Component {
                   <p>€ 3.50</p>
                 </span>
                   </div>
-                  <img src="/images/cafe2.png" alt="cats" />
+                  <img src="/images/drink.jpg" alt="cafeDrink" />
                 </div>
 
                 
@@ -113,15 +125,15 @@ class Cafe extends Component {
                       <p>€ 4.00</p>
                     </span>
                     <span className="menu-detail">
-                      <p>Nachos with Salsa Dip</p>
+                      <p>New York Cheesecake</p>
                       <p>€ 5.50</p>
                     </span>
                     <span className="menu-detail">
-                    <p>Curry and rice</p>
-                    <p>€ 7.50</p>
+                    <p>Blueberry Cheesecake</p>
+                    <p>€ 5.50</p>
                   </span>
                   </div>
-                  <img src="/images/cafe2.png" alt="cats" />
+                  <img src="/images/cafe3.jpg" alt="cafeDessert" />
                 </div>
             </div>
             

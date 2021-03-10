@@ -72,8 +72,6 @@
   border-radius: 10%;
 }
 
-
-
 .nav-link {
   padding: 0;
 }
@@ -93,7 +91,6 @@
 /* -----Home page----- */
 .home-body {
   height: 590px;
-  /* margin-bottom: 1%; */
 }
 
 .home-inside {
@@ -109,6 +106,11 @@
 }
 
 /* -----cafe page----- */
+.cafe-body h1 {
+  font-size: 40px;
+  text-shadow: 4px 3px 3px #808080
+}
+
 .cafe-body img {
   width: 30%;
   height: auto;
@@ -116,10 +118,12 @@
 
 .menu-detail {
   display: flex;
+  padding: 0 30%;
 }
 
 .menu-detail p {
   text-align: center;
+  white-space: nowrap;
 }
 
 .menu-wrap {
@@ -136,14 +140,28 @@
   width: 40%;
 }
 
+.menu-block h2 {
+  margin: 2% 12%;
+  color: #010079;
+  text-shadow: 0 0 5px white;
+  border-left: solid 7px #010079;
+  background: -webkit-repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #cce7ff, #cce7ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
 .menu-wrap img {
   width: 40%;
   height: auto;
 }
 
 
-
 /* -----cat page----- */
+.cats-body h3 {
+  text-shadow: 3px 4px 5px rgb(88, 86, 86);
+  font-size: 50px;
+  margin-bottom: 3%;
+}
+
 .wrap-cats {
   display: flex;
   flex-wrap: wrap;
@@ -151,21 +169,31 @@
 }
 
 .cats-cards {
-  margin: 0;
+  margin-bottom: 2%;
   width: 45%;
 }
 
 .cats-cards img {
   display: inline-block;
-  width: 80%;
+  width: 70%;
   height: auto;
   vertical-align: top;
+  border-radius: 50%;
 }
 
 .card,
 .accordion {
   width: 90%;
   margin: 0 auto;
+}
+
+.accordion {
+  margin-top: 2%;
+}
+
+.btn-link {
+  font-size: 30px;
+  color: #000;
 }
 
 
@@ -181,6 +209,21 @@
   margin-right: 7%;
   height: 80%;
   width: 34%;
+  text-align: left;
+  padding: 2% 0 0 2%;
+}
+
+.contact-left h2 {
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid;
+  width: 90%;
+  white-space: nowrap;
+}
+
+.contact-left p {
+  font-size: 20px;
+  margin-bottom: 10%;
 }
 
 .contact-right {

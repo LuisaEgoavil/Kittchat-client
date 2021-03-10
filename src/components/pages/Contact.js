@@ -67,15 +67,15 @@ class Contact extends Component {
     const position5 = [52.535594, 13.424836]
 
     const locationPin = new L.Icon({
-      iconUrl: '../images/pin.png',
+      iconUrl: '../images/pin2.png',
       iconSize: [60, 60]
     })
 
     return (
       <div>
         <div className="main-body contact-body">
+          <h1>Contact Details</h1>
           <div className="contact-left">
-          
             <h2>Cafe Name</h2>
             <p>{location[locationToDisplay].cafeName}</p>
             <h2>Address</h2>

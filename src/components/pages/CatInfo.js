@@ -12,7 +12,7 @@ class CatInfo extends Component {
           <h3>Meet the Cats</h3>
           <div className="wrap-cats">
             <div className="cats-cards">
-              <img src="/images/catimages/cat1.jpg" alt="cats" />
+              <img src="/images/catimages/cat1.png" alt="cats" />
               <Accordion>
                 <Card>
                   <Card.Header>
@@ -68,7 +68,7 @@ class CatInfo extends Component {
             </div>
 
             <div className="cats-cards">
-              <img src="/images/catimages/cat5.jpg" alt="cats" />
+              <img src="/images/catimages/cat5.png" alt="cats" />
               <Accordion>
                 <Card>
                   <Card.Header>
