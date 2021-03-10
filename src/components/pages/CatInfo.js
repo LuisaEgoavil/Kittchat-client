@@ -8,7 +8,7 @@ class CatInfo extends Component {
 
     return (
       <div>
-        <div className="main-body cats-body">
+        <div className="main-body cats-body" style={{backgroundImage: `url(/images/cafe-bg8.jpg)`,backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:'no-repeat'}}>
           <h3>Meet the Cats</h3>
           <div className="wrap-cats">
             <div className="cats-cards">

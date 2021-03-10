@@ -30,14 +30,14 @@ class BookingList extends Component {
     if (!reservation) return <h1>Loading</h1>
     return (
       <div>
-        <div class="main-body cnfirm-body">
+        <div class="main-body confirm-body" style={{backgroundImage: `url(/images/cafe-bg6.jpg)`,backgroundSize: "cover",backgroundPosition:"bottom",backgroundRepeat:'no-repeat'}}>
           <h1>Reservation confirmation</h1>
           <div className="confirm-inner">
-            <p><strong>Cafe Location</strong> <br/>{reservation.locationName.cafeName}</p>
-            <p><strong>Name</strong> <br/>{reservation.reservationName}</p>
-            <p><strong>Date</strong> <br/>{reservation.date}</p>
-            <p><strong>Time</strong> <br/>{reservation.time}</p>
-            <p><strong>Special request</strong> <br/>{reservation.description}</p>
+            <p><strong>Cafe Location</strong> <br/><span className="confirm-topic">{reservation.locationName.cafeName}</span></p>
+            <p><strong>Name</strong> <br/><span className="confirm-topic">{reservation.reservationName}</span></p>
+            <p><strong>Date</strong> <br/><span className="confirm-topic">{reservation.date}</span></p>
+            <p><strong>Time</strong> <br/><span className="confirm-topic">{reservation.time}</span></p>
+            <p><strong>Special request</strong> <br/><span className="confirm-topic">{reservation.description}</span></p>
             <Link to="/profile"><button>Profile</button></Link>
             <button onClick={() => {onDelete(reservation._id)}}>Cancel </button>
           </div>

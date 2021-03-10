@@ -73,56 +73,59 @@ class Contact extends Component {
 
     return (
       <div>
-        <div className="main-body contact-body">
-          <div className="contact-left">
-            <h2>Cafe Name</h2>
-            <p>{location[locationToDisplay].cafeName}</p>
-            <h2>Address</h2>
-            <p>{location[locationToDisplay].address}</p>
-            <h2>Open Hours</h2>
-            <p>{location[locationToDisplay].hours}</p>
-            <h2>Phone Number</h2>
-            <p>{location[locationToDisplay].phoneNumber}</p>
-            <h2>Email</h2>
-            <p>{location[locationToDisplay].email}</p>
+        <div className="main-body contact-body-wrapper" style={{backgroundImage: `url(/images/cafe-bg7.jpg)`,backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:'no-repeat'}}>
+          <h1>Contact</h1>
+          <div className="contact-body">
+            <div className="contact-left">
+              <h2>Cafe Name</h2>
+              <p>{location[locationToDisplay].cafeName}</p>
+              <h2>Address</h2>
+              <p>{location[locationToDisplay].address}</p>
+              <h2>Open Hours</h2>
+              <p>{location[locationToDisplay].hours}</p>
+              <h2>Phone Number</h2>
+              <p>{location[locationToDisplay].phoneNumber}</p>
+              <h2>Email</h2>
+              <p>{location[locationToDisplay].email}</p>
+            </div>
+
+            <div className="contact-right">
+              <MapContainer style={{width: '550px', height: '470px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
+                <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                  
+                <div className="location-spot">
+                  <Marker icon={locationPin} position={position1}>
+                    <Popup><button onClick={this.handleLocationA}>Kittchat Schöneberg</button></Popup>
+                  </Marker>
+                </div>
+
+                <div className="location-spot">
+                  <Marker icon={locationPin} position={position2}>
+                    <Popup><button onClick={this.handleLocationB}>Kittchat Charlottenburg</button></Popup>
+                  </Marker>
+                </div>
+
+                <div className="location-spot">
+                  <Marker icon={locationPin} position={position3}>
+                    <Popup><button onClick={this.handleLocationC}>Kittchat Kreuzberg</button></Popup>
+                  </Marker>
+                </div>
+
+                <div className="location-spot">
+                  <Marker icon={locationPin} position={position4}>
+                    <Popup><button onClick={this.handleLocationD}>Kittchat Neukölln</button></Popup>
+                  </Marker>
+                </div>
+
+                <div className="location-spot">
+                  <Marker icon={locationPin} position={position5}>
+                    <Popup><button onClick={this.handleLocationE}>Kittchat Prenzlauer Berg</button></Popup>
+                  </Marker>
+                </div>
+              </MapContainer>
+            </div>
           </div>
-
-          <div className="contact-right">
-          <MapContainer  style={{width: '550px', height: '470px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
-            <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              
-            <div className="location-spot">
-              <Marker icon={locationPin} position={position1}>
-                <Popup><button onClick={this.handleLocationA}>Kittchat Schöneberg</button></Popup>
-              </Marker>
-            </div>
-
-            <div className="location-spot">
-              <Marker icon={locationPin} position={position2}>
-                <Popup><button onClick={this.handleLocationB}>Kittchat Charlottenburg</button></Popup>
-              </Marker>
-            </div>
-
-            <div className="location-spot">
-              <Marker icon={locationPin} position={position3}>
-                <Popup><button onClick={this.handleLocationC}>Kittchat Kreuzberg</button></Popup>
-              </Marker>
-            </div>
-
-            <div className="location-spot">
-              <Marker icon={locationPin} position={position4}>
-                <Popup><button onClick={this.handleLocationD}>Kittchat Neukölln</button></Popup>
-              </Marker>
-            </div>
-
-            <div className="location-spot">
-              <Marker icon={locationPin} position={position5}>
-                <Popup><button onClick={this.handleLocationE}>Kittchat Prenzlauer Berg</button></Popup>
-              </Marker>
-            </div>
-          </MapContainer>
-        </div>
         </div>
       </div>
     )

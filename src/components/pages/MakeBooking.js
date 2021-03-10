@@ -39,8 +39,8 @@ class MakeBooking extends Component {
                 <label>Special Request</label><br></br>
                 <input name="description" type="text" />
               </div><br></br>
-              <button className="form-submit-btn" type="submit">Submit</button> 
-              <Link to="/profile"><button>Go back to Profile</button></Link>
+              <button className="booking-form-btn" type="submit">Submit</button> 
+              <Link to="/profile"><button className="booking-form-btn">Go back to Profile</button></Link>
             </form>
 
           </div>

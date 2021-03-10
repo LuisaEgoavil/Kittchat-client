@@ -5,7 +5,7 @@ class Cafe extends Component {
   render() {
     return (
       <div>
-        <div className="main-body cafe-body">
+        <div className="main-body cafe-body" style={{backgroundImage: `url(/images/cafe-bg7.jpg)`,backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:'no-repeat'}}>
           <h1>Menu</h1> 
 
             <div className="cafe">
