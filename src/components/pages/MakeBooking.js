@@ -9,11 +9,11 @@ class MakeBooking extends Component {
     return (
       <div>
     
-        <div className="main-body booking-body">
+        <div className="main-body booking-body" style={{backgroundImage: `url(/images/cafe-bg3.jpg)`,backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:'no-repeat'}}>
           <div className="booking-right">
-          
+            <h1>Reservation here!</h1>
             <form onSubmit={this.props.onAdd} className="book-form">
-              <div>
+              <div className="form-topic">
                 <label>Cafe Location</label><br></br>
                 <select name="locationName">
                   <option value="Kittchat Schöneberg">Kittchat Schöneberg</option>
@@ -23,23 +23,23 @@ class MakeBooking extends Component {
                   <option value="Kittchat Prenzlauer Berg">Kittchat Prenzlauer Berg</option>
                 </select>
               </div>
-              <div>
+              <div className="form-topic">
                 <label>Date</label><br></br>
                 <input name="date" type="date" />
               </div>
-              <div>
+              <div className="form-topic">
                 <label>Time</label><br></br>
                 <input name="time" type="time" />
               </div>
-              <div>
+              <div className="form-topic">
                 <label>Name</label><br></br>
                 <input name="reservationName" type="text" />
               </div>
-              <div>
+              <div className="form-topic">
                 <label>Special Request</label><br></br>
                 <input name="description" type="text" />
               </div><br></br>
-              <button type="submit">Submit</button> <br/><br/>
+              <button className="form-submit-btn" type="submit">Submit</button> 
               <Link to="/profile"><button>Go back to Profile</button></Link>
             </form>
 
