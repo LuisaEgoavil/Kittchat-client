@@ -4,15 +4,16 @@
 }
 
 .main-body {
-  padding-top: 6%;
+  padding-top: 8%;
   margin: 0 auto;
   width: 100%;
   text-align: center;
 }
 
+
 /* -----Header----- */
 .header {
-  background-color: rgb(165, 224, 248);
+  /* background-color: #fff; */
   display: flex;
   justify-content: space-between;
   padding: 0 10% 0 7%;
@@ -20,15 +21,20 @@
   z-index: 9999;
   border-bottom: blue;
   box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+  height: fit-content;
+}
+
+.logo {
+  height: fit-content;
 }
 
 .logo img {
-  width: 10%;
+  width: 9%;
   height: auto;
 }
 
 .header-nav {
-  margin-right: 7%;
+  margin: 0 7% 0 0;
   padding: 2% 0 0 0 ;
   display: flex;
 }
@@ -36,6 +42,7 @@
 .header-nav li {
   list-style: none;
   text-decoration: none;
+  font-size: 12px;
 }
 
 .header-nav li:not(:first-child) {
@@ -44,7 +51,22 @@
 
 .header-nav li a {
   color: #000;
+  text-decoration: none;
+  /* display: inline-block;
+  transition: all .3s ease 0s;
+   */
 }
+
+/* .header-nav li a:hover {
+  transform: scale(1.2);
+} */
+
+.header-btn {
+  padding: 2% 2%;
+  border-radius: 10%;
+}
+
+
 
 .nav-link {
   padding: 0;
@@ -57,17 +79,27 @@
 /* -----Footer page----- */
 .footer {
   width: 98%;
-  margin: 2% auto;
+  margin: 1% auto 0;
   text-align: center;
+  font-size: 11px;
 }
 
 /* -----Home page----- */
+.home-body {
+  height: 590px;
+  /* margin-bottom: 1%; */
+}
 
 .home-inside {
-  margin: 10% 20%;
+  margin: 5% 20%;
   padding: 6% 10%;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.20);
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+.home-inside h1 {
+  font-size: 50px;
+  text-shadow: 4px 3px 3px #808080
 }
 
 /* -----cafe page----- */

@@ -9,7 +9,7 @@ class Header extends Component {
     
     return (
       <div>
-        <div className="header">
+        <div className="header" style={{backgroundImage: `url(/images/bg2.jpg)`,backgroundSize: "cover",backgroundPosition:"top",backgroundRepeat:'no-repeat',}}>
           <div className="logo">
             <Link to="/"><img src="images/logo-kittchat.png" alt="logo" width="100"/></Link>
           </div>
@@ -25,7 +25,7 @@ class Header extends Component {
             <li>
             {
                 this.props.user ? (
-                  <button onClick={this.props.onLogout}>Logout</button>
+                  <button className="header-btn" onClick={this.props.onLogout}>Logout</button>
                   
 
                 ) : (
