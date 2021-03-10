@@ -7,9 +7,9 @@ import CatInfo from "./components/pages/CatInfo";
 import Contact from "./components/pages/Contact";
 import Profile from "./components/pages/Profile"
 import Reservation from "./components/pages/Reservation";
+import EditForm from './components/pages/EditForm'
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
-import Admin from './components/auth/Admin';
 import axios from "axios";
 import config from "./config";
 import MakeBooking from "./components/pages/MakeBooking";
@@ -87,6 +87,8 @@ handleLogInAdmin = (event) => {
     .catch((err) => {
       console.log('something went wrong', err)
     })
+
+    
 }
 
 //-----------Logout-------------------------------------------------//
@@ -151,7 +153,39 @@ componentDidMount(){
         console.log('created failed', err)
       })
   }
-//-------------------------------------------------------------------//
+//----------EDIT---------------------------------------------------------//
+
+handleEditReservation = (reservation) => {
+  axios.patch(`${config.API_URL}/api/profile/${reservationId}`, {
+    locationName: reservation.locationName,
+    time: reservation.time,
+    date: reservation.date,
+    reservationName: reservation.reservationName,
+    description: reservation.description
+  })
+
+    .then(() => {
+      let newReservations = this.state.reservations.map((singleReservation) => {
+          if(reservation._id === singleReservation._id) {
+            singleReservation.locationName = reservation.locationName
+            singleReservation.time = reservation.time
+            singleReservation.date = reservation.date
+            singleReservation.reservationName = reservation.reservationName
+            singleReservation.description = reservation.description
+          }
+          return singleReservation
+      })
+      this.setState({
+        reservations: newReservations
+      }, () => {
+        this.props.history.push('/profile')
+      })
+    })
+    .catch((err) => {
+      console.log('edit failed', err)
+    })
+}
+//------------DELETE-------------------------------------------------------//
   handleDelete = (reservationId) => {
     axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
       .then(() => {
@@ -180,9 +214,6 @@ componentDidMount(){
           <Route exact path="/" component={Home} />
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
-          <Route path="/admin" redner={(routeProps) => {
-            return <Admin onLoginAdmin={this.handleLogInAdmin} {...routeProps}/>
-          }} />
           <Route path="/contact" component={Contact} />
           <Route path="/profile" render={ (routeProps) => {
             return <Profile user={loggedInUser} onDelete={this.handleDelete}{...routeProps}/>
@@ -190,6 +221,9 @@ componentDidMount(){
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList user={loggedInUser} onDelete={this.handleDelete} {...routeProps}/>
+          }} />
+          <Route path="/profile/:id/edit" render={(reouteProps) => {
+            return <EditForm onEdit={this.handleEditReservation} {...routeProps} />
           }} />
           <Route path="/signup" render={(routeProps)=> {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>
