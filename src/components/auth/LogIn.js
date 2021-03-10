@@ -9,7 +9,7 @@ class LogIn extends Component {
       <div>
         <div className="main-body login-body" style={{backgroundImage: `url(/images/cafe-bg4.png)`,backgroundSize: "cover",backgroundPosition:"bottom",backgroundRepeat:'no-repeat'}}>
           <div className="login-inner">
-            <h1>Login as a user</h1>
+            <h1>Login</h1>
             <form onSubmit={this.props.onLogIn}>
               <div className="form-grooup">
                 <label className="email">Email</label>

@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import config from '../../config'
+
 class Profile extends Component {
   state = {
     reservations : []
   }
 
   componentDidMount(){
-    //let reservationId = this.props.match.params.id
+   
     axios.get(`${config.API_URL}/api/profile`,{withCredentials: true})
       .then((response) =>{
         console.log(response.data)
@@ -40,6 +41,38 @@ class Profile extends Component {
     }
 
 //---------------------------------------------
+handleEditReservation = (reservationId) => {
+  axios.patch(`${config.API_URL}/api/profile/${reservationId}`, {
+    locationName: reservation.locationName,
+    time: reservation.time,
+    date: reservation.date,
+    reservationName: reservation.reservationName,
+    description: reservation.description
+  })
+
+    .then(() => {
+      let newReservations = this.state.reservations.map((singleReservation) => {
+          if(reservation._id === singleReservation._id) {
+            singleReservation.locationName = reservations.locationName
+            singleReservation.time = reservations.time
+            singleReservation.date = reservations.date
+            singleReservation.reservationName = reservations.reservationName
+            singleReservation.description = reservations.description
+          }
+          return singleReservation
+      })
+      this.setState({
+        reservations: newReservations
+      }, () => {
+        this.props.history.push('/profile')
+      })
+    })
+    .catch((err) => {
+      console.log('edit failed', err)
+    })
+}
+
+
 
     render() {
         const {reservations} = this.state
@@ -56,11 +89,15 @@ class Profile extends Component {
                 return <div className="main-body profile-body" key={index}>
                 <p><strong>Location:</strong> {reservation.locationName.cafeName}</p>
                 <p><strong>Address:</strong> {reservation.locationName.address}</p>
-                <p><strong>Name:</strong> {reservation.name}</p>
+                <p><strong>Phone Number:</strong> {reservation.locationName.phoneNumber}</p>
+                <p><strong>Opening Hour:</strong> {reservation.locationName.hours}</p>
+                <p><strong>Email:</strong> {reservation.locationName.email}</p>
+                <p><strong>Name:</strong> {reservation.reservationName}</p>
                 <p><strong>Date:</strong> {reservation.date}</p>
                 <p><strong>Time:</strong> {reservation.time}</p>
                 <p><strong>Request:</strong> {reservation.description}</p>
                 <button className="delete-btn" onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
+                <button onClick={() => {this.handleEditReservation(reservation._id)}}>Change</button>
                 </div>  
                 })
             }
