@@ -68,6 +68,27 @@ class App extends Component {
         console.log('something went wrong', err)
       })
   }
+
+//-----------Login admin--------------------------------------------//
+handleLogInAdmin = (event) => {
+  event.preventDefault()
+  let admin = {
+    email: event.target.email.value,
+    password: event.target.password.value
+  }
+  axios.post(`${config.API_URL}/api/login`, admin, {withCredentials: true})
+    .then((response) => {
+      this.setState({
+        loggedInUser: response.data
+      }, () => {
+        this.props.history.push('/admin')
+      })
+    })
+    .catch((err) => {
+      console.log('something went wrong', err)
+    })
+}
+
 //-----------Logout-------------------------------------------------//
   handleLogout = () => {
     axios.post(`${config.API_URL}/api/logout`, {}, {withCredentials: true})
@@ -159,7 +180,9 @@ componentDidMount(){
           <Route exact path="/" component={Home} />
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
-          <Route path="/admin" component={Admin} />
+          <Route path="/admin" redner={(routeProps) => {
+            return <Admin onLoginAdmin={this.handleLogInAdmin} {...routeProps}/>
+          }} />
           <Route path="/contact" component={Contact} />
           <Route path="/profile" render={ (routeProps) => {
             return <Profile user={loggedInUser} onDelete={this.handleDelete}{...routeProps}/>

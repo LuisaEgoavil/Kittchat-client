@@ -55,6 +55,7 @@ class Profile extends Component {
                 reservations.map((reservation, index) => {
                     return <div class="main-body" key={index}>
                     <p>Location: {reservation.locationName.cafeName}</p>
+                    <p>{reservation.locationName.address}</p>
                     <p>Name: {reservation.name}</p>
                     <p>Date: {reservation.date}</p>
                     <p>Time: {reservation.time}</p>
