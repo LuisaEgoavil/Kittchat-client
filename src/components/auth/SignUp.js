@@ -1,14 +1,33 @@
 import React, { Component } from 'react'
 import Footer from '../Footer'
 import GoogleLogin from 'react-google-login'
+import axios from 'axios'
+import config from '../../config'
 
 
 class SignUp extends Component {
 
+  state = {
+    loggedInUser: null,
+  }
+
   responseGoogle=(response) => {
     console.log(response);
     console.log(response.profileObj);
+
+    axios.post(`${config.API_URL}/api/login`)
+      .then((response) => {
+        this.setState({
+          loggedInUser: response.data
+        }, () => {
+          this.props.history.push('/booking')
+        })
+      })
+      .catch((err) => {
+        console.log('something went wrong', err)
+      })
   }
+
   render() {
     return (
       <div>

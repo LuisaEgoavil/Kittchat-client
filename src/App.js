@@ -9,6 +9,7 @@ import Profile from "./components/pages/Profile"
 import Reservation from "./components/pages/Reservation";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
+import Admin from './components/auth/Admin';
 import axios from "axios";
 import config from "./config";
 import MakeBooking from "./components/pages/MakeBooking";
@@ -38,7 +39,7 @@ class App extends Component {
           this.setState({
             loggedInUser: response.data
           }, () => {
-            this.props.history.push('/booking')
+            this.props.history.push('/profile')
           })
       })
       .catch((err) => {
@@ -60,7 +61,7 @@ class App extends Component {
         this.setState({
           loggedInUser: response.data
         }, () => {
-          this.props.history.push('/booking')
+          this.props.history.push('/profile')
         })
       })
       .catch((err) => {
@@ -158,6 +159,7 @@ componentDidMount(){
           <Route exact path="/" component={Home} />
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
+          <Route path="/admin" component={Admin} />
           <Route path="/contact" component={Contact} />
           <Route path="/profile" render={ (routeProps) => {
             return <Profile user={loggedInUser} onDelete={this.handleDelete}{...routeProps}/>

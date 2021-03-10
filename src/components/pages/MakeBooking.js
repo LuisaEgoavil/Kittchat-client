@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 class MakeBooking extends Component {
 
@@ -10,6 +11,7 @@ class MakeBooking extends Component {
     
         <div className="main-body booking-body">
           <div className="booking-right">
+          
             <form onSubmit={this.props.onAdd} className="book-form">
               <div>
                 <label>Cafe Location</label><br></br>
@@ -37,7 +39,8 @@ class MakeBooking extends Component {
                 <label>Special Request</label><br></br>
                 <input name="description" type="text" />
               </div><br></br>
-              <button type="submit">Submit</button>
+              <button type="submit">Submit</button> <br/><br/>
+              <Link to="/profile"><button>Go back to Profile</button></Link>
             </form>
 
           </div>

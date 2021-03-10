@@ -48,7 +48,9 @@ class Profile extends Component {
         return (
             <div>
             <div className="main-body">
-                <h1>Profile</h1>
+                <h1>Profile</h1><br/>
+               <Link to="/booking"><button>Click here to make a reservation</button></Link> 
+
             {
                 reservations.map((reservation, index) => {
                     return <div class="main-body" key={index}>
