@@ -80,7 +80,7 @@ class EditForm extends Component {
 
         return (
       
-          <form className="main-body" onSubmit={this.props.onEdit}>
+          <form className="main-body edit-page" onSubmit={this.props.onEdit}>
               <div className="form-topic">
                 <label>Cafe Location</label><br></br>
                 <select name="locationName">
