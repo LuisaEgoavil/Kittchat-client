@@ -91,7 +91,7 @@ class Contact extends Component {
             </div>
 
             <div className="contact-right">
-              <MapContainer style={{width: '550px', height: '470px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
+              <MapContainer style={{width: '550px', height: '565px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
                 <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                   

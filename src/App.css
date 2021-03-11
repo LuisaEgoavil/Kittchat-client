@@ -203,6 +203,10 @@
 
 
 /* -----Contact Page----- */
+.contact-body-wrapper {
+  height: 900px;
+}
+
 .contact-body-wrapper h1 {
   margin-bottom: 3%;
   text-shadow: 4px 4px 5px #808080;
