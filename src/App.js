@@ -16,6 +16,7 @@ import MakeBooking from "./components/pages/MakeBooking";
 import BookingList from "./components/pages/BookingList"
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ErrorPage from './components/Error'
 import GoogleLogin from 'react-google-login'
 import './App.css';
 //-------------------------------------------------------------------//
@@ -239,6 +240,7 @@ handleEditReservation = (event) => {
           <Route path="/login" render={(routeProps) => {
             return <LogIn onLogIn={this.handleLogIn} {...routeProps}/>
           }} />
+          <Route path="/" component={ErrorPage} />
         </Switch>
         <Footer />
       </div>

@@ -435,6 +435,31 @@
   border: 1px solid;
 }
 
+/* -----Error Page----- */
+.error-body {
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6%;
+}
+
+.error-message {
+  padding: 10% 0;
+}
+
+.error-message h1 {
+  font-size: 60px;
+}
+
+.error-message p {
+  font-size: 30px;
+}
+
+.error-img {
+  width: 40%;
+  height: auto;
+}
+
 
 
 
