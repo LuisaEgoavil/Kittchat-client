@@ -9,7 +9,6 @@ class Profile extends Component {
   }
 
   componentDidMount(){
-   
     axios.get(`${config.API_URL}/api/profile`,{withCredentials: true})
       .then((response) =>{
         console.log(response.data)
@@ -76,7 +75,7 @@ handleEditReservation = (reservationId) => {
 
     render() {
         const {reservations} = this.state
-        // const {onDelete} = this.props
+        
         
         return (
           <div>
@@ -87,14 +86,16 @@ handleEditReservation = (reservationId) => {
             {
               reservations.map((reservation, index) => {
                 return <div className="main-body profile-body" key={index}>
-                <p><strong>Location:</strong> {reservation.locationName?.cafeName}</p>
-                <p><strong>Address:</strong> {reservation.locationName?.address}</p>
-                <p><strong>Phone Number:</strong> {reservation.locationName?.phoneNumber}</p>
-                <p><strong>Opening Hour:</strong> {reservation.locationName?.hours}</p>
-                <p><strong>Email:</strong> {reservation.locationName?.email}</p>
+                <p><strong>Location:</strong> {reservation.locationName.cafeName}</p>
+                <p><strong>Address:</strong> {reservation.locationName.address}</p>
+                <p><strong>Phone Number:</strong> {reservation.locationName.phoneNumber}</p>
+                <p><strong>Opening Hour:</strong> {reservation.locationName.hours}</p>
+                <p><strong>Cafe Email:</strong> {reservation.locationName.email}</p>
                 <p><strong>Name:</strong> {reservation.reservationName}</p>
                 <p><strong>Date:</strong> {reservation.date}</p>
                 <p><strong>Time:</strong> {reservation.time}</p>
+                <p><strong>Username:</strong> {reservation.user?.username}</p>
+                <p><strong>User Email:</strong> {reservation.user?.email}</p>
                 <p><strong>Request:</strong> {reservation.description}</p>
                 <button className="delete-btn" onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
                 <Link to={`/profile/edit/${reservation._id}`}><button className="change-btn">Change</button></Link>
