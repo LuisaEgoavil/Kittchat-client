@@ -5,7 +5,7 @@ class Footer extends Component {
     return (
       <div>
         <div className="footer">
-          <small>© 2021 created by Lupita and Megumi, Powered by the amazing House Hufflepuff!</small>
+          <small>© 2021 created by Lupita and Megumi</small>
         </div>
       </div>
     )
