@@ -293,6 +293,9 @@
 
 .change-btn {
   border: 1px solid;
+  margin-left: 8%;
+  padding: 0 1%;
+  background-color: rgb(255, 210, 85);
 }
 
 .profile-body {
@@ -460,9 +463,6 @@
   width: 40%;
   height: auto;
 }
-
-/* -----Edit form----- */
-
 
 
 

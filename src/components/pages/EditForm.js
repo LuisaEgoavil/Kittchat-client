@@ -56,6 +56,15 @@ class EditForm extends Component {
       this.setState({reservation:resertime})
     }
 
+    handleLocationChange=(event)=>{
+      let locationName = event.target.value;
+      let reserLocation = {
+        locationName: locationName,
+        description:this.state.reservation.description
+      }
+      this.setState({reservation:reserLocation})
+    }
+
     render() {
 
         const {reservation} = this.state
@@ -67,13 +76,14 @@ class EditForm extends Component {
             <form className="edit-form" onSubmit={this.props.onEdit}>
               <div className="edit-inner">
                 <label>Cafe Location</label><br></br>
-                <select name="locationName">
+                <input  onChange={this.handleLocationChange} value={reservation.locationName} name="locationName" type="text"/>
+                {/* <select onChange={this.handleLocationChange} value={reservation.locationName} name="locationName">
                   <option value="Kittchat Schöneberg">Kittchat Schöneberg</option>
                   <option value="Kittchat Charlottenburg">Kittchat Charlottenburg</option>
                   <option value="Kittchat Kreuzberg">Kittchat Kreuzberg</option>
                   <option value="Kittchat Neukölln">Kittchat Neukölln</option>
                   <option value="Kittchat Prenzlauer Berg">Kittchat Prenzlauer Berg</option>
-                </select>
+                </select> */}
               </div>
 
               <div className="form-topic">
