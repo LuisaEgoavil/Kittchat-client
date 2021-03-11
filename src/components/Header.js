@@ -15,10 +15,10 @@ class Header extends Component {
           </div>
           <ul className="header-nav">
             <li>
-              <NavDropdown title="ABOUT" id="nav-dropdown">
+              {/* <NavDropdown title="ABOUT" id="nav-dropdown">
                 <NavDropdown.Item eventKey="4.1"><Link to="/cafe">Cafe</Link></NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2"><Link to="/catinfo">Cats</Link></NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </li>
             <li><Link to="/contact">CONTACT</Link></li>
             <li><Link to="/reservation">RESERVATION</Link></li>
