@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import GoogleLogin from 'react-google-login'
+//import GoogleLogin from 'react-google-login'
 import axios from 'axios'
 import config from '../../config'
 
@@ -48,14 +48,14 @@ class SignUp extends Component {
               </div>
               <button className="signup-btn" type="submit">Sign Up</button>
 
-              <GoogleLogin 
+              {/* <GoogleLogin 
                 clientId="485417191125-mla07ur1253tkh1lhepvdqb17hrlofs2.apps.googleusercontent.com"
                 buttonText="Signup with Google"
                 onSuccess={this.responseGoogle}
                 onFailure={this.responseGoogle}
                 isSignedIn={true}
                 cookiePolicy={'single_host_origin'}
-              />
+              /> */}
             </form>
           </div>
         </div>
