@@ -160,10 +160,18 @@ handleEditReservation = (event) => {
   let reservationName=event.target.reservationName.value
   let description = event.target.description.value
   let id = event.target.id.value
+  let locationName = event.target.locationName.value
+  let date = event.target.date.value
+  let time = event.target.time.value
+
 
   axios.patch(`${config.API_URL}/api/profile/${id}`, {
     reservationName,
-    description
+    description,
+    id,
+    locationName,
+    date,
+    time
   })
 
     .then(() => {

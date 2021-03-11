@@ -23,8 +23,8 @@ class EditForm extends Component {
     }
 
     handleNameChange=(event)=>{
-      let name=event.target.value;
-      let reser={
+      let name = event.target.value;
+      let reser = {
         reservationName:name,
         description:this.state.reservation.description
       }
@@ -32,46 +32,29 @@ class EditForm extends Component {
     }
 
     handleDesChange=(event)=>{
-      let description=event.target.value;
-      let clonedReservation=JSON.parse(JSON.stringify(this.state.reservation))
-      clonedReservation.description=description;
+      let description = event.target.value;
+      let clonedReservation = JSON.parse(JSON.stringify(this.state.reservation))
+      clonedReservation.description = description;
       this.setState({reservation:clonedReservation})
     }
 
     handleDateChange=(event)=>{
-      let date=event.target.value;
-      let reser={
-        date:date,
+      let date = event.target.value;
+      let reserdate = {
+        date: date,
         description:this.state.reservation.description
       }
-      this.setState({reservation:reser})
+      this.setState({reservation:reserdate})
     }
 
     handleTimeChange=(event)=>{
-      let time=event.target.value;
-      let reser={
+      let time = event.target.value;
+      let resertime = {
         time:time,
         description:this.state.reservation.description
       }
-      this.setState({reservation:reser})
+      this.setState({reservation:resertime})
     }
-
-  //   handleDelete = (reservationId) => {
-  //   axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
-  //     .then(() => {
-  //       let filteredReservations = this.state.reservations.filter((reservation) => {
-  //         return reservation._id !== reservationId
-  //         })
-  //           this.setState({
-  //             reservations: filteredReservations
-  //           }, () => {
-  //             this.props.history.push('/profile')
-  //           })
-  //     })
-  //     .catch((err) => {
-  //       console.log('delete failed'. err)
-  //     })
-  // }
 
     render() {
 
@@ -80,7 +63,7 @@ class EditForm extends Component {
 
         return (
       
-          <form className="main-body" onSubmit={this.props.onEdit}>
+          <form className="main-body" onSubmit={onEdit}>
               <div className="form-topic">
                 <label>Cafe Location</label><br></br>
                 <select name="locationName">
@@ -91,23 +74,28 @@ class EditForm extends Component {
                   <option value="Kittchat Prenzlauer Berg">Kittchat Prenzlauer Berg</option>
                 </select>
               </div>
+
               <div className="form-topic">
-                <label onChange={this.handleDateChange} value={reservation.date}>Date</label><br></br>
-                <input name="date" type="date" />
+                <label >Date</label><br></br>
+                <input onChange={this.handleDateChange} value={reservation.date} name="date" type="date" />
               </div>
+
               <div className="form-topic">
-                <label value={reservation.time}>Time</label><br></br>
-                <input onChange={this.handleTimeChange} name="time" type="time" />
+                <label>Time</label><br></br>
+                <input onChange={this.handleTimeChange}  value={reservation.time} name="time" type="time" />
               </div>
+
               <div className="form-group">
               <input hidden value={reservation._id} name="id" type="text"/>
                 <label >Name</label>
                 <input onChange={this.handleNameChange} value={reservation.reservationName} name="reservationName" type="text"/>
               </div>
+
               <div className="form-group">
                 <label>Special Request</label>
                 <input onChange={this.handleDesChange} value={reservation.description} name="description" type="text"/>
               </div>
+
               <button type="submit">Update</button>
             </form>
         
