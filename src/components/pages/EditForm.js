@@ -75,7 +75,7 @@ class EditForm extends Component {
             <h1>Edit the booking</h1>
             <form className="edit-form" onSubmit={this.props.onEdit}>
               <div className="edit-inner">
-                <label>Cafe Location</label><br></br>
+                <label className="edit-form-location">Cafe Location</label><br></br>
                 <input disabled onChange={this.handleLocationChange} value={reservation.locationName?.cafeName} name={reservation.locationName} type="text"/>
               </div>
 
