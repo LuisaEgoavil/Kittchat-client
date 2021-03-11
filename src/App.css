@@ -272,10 +272,6 @@
 }
 
 /* -----Profile page----- */
-/* .profile-wrapper {
-  height: 680px;
-} */
-
 .profile-wrapper h1 {
   text-shadow: 4px 4px 5px rgb(124, 124, 124);
 }
@@ -312,15 +308,19 @@
   font-weight: 800;
 }
 
-/* -----Booking Page----- */
-.booking-body {
+/* -----Booking Page & Edit Page----- */
+.booking-body,
+.edit-body {
   height: 640px;
 }
-.booking-right h1 {
+
+.booking-inner h1,
+.edit-body h1 {
   text-shadow: 4px 2px 5px #808080;
 }
 
-.book-form {
+.book-form,
+.edit-form {
   width: 50%;
   border: 1px solid;
   background-color: rgba(250, 250, 250, 0.7);
@@ -333,11 +333,12 @@
   margin-bottom: 4%;
 }
 
-.form-topiclabel {
+.form-topic label {
   font-weight: 600;
 }
 
-.booking-form-btn {
+.booking-form-btn,
+.edit-form-btn {
   margin: 1% 6% 0 0;
   padding: 1% 2%;
 }

@@ -79,9 +79,10 @@ class EditForm extends Component {
         const {onEdit} = this.props
 
         return (
-      
-          <form className="main-body edit-page" onSubmit={this.props.onEdit}>
-              <div className="form-topic">
+          <div className="main-body edit-body" style={{backgroundImage: `url(/images/cafe-bg10.jpg)`,backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:'no-repeat'}}>
+            <h1>Edit the booking</h1>
+            <form className="edit-form" onSubmit={this.props.onEdit}>
+              <div className="edit-inner">
                 <label>Cafe Location</label><br></br>
                 <select name="locationName">
                   <option value="Kittchat Schöneberg">Kittchat Schöneberg</option>
@@ -101,16 +102,17 @@ class EditForm extends Component {
               </div>
               <div className="form-group">
               <input hidden value={reservation._id} name="id" type="text"/>
-                <label >Name</label>
+                <label >Name</label><br></br>
                 <input onChange={this.handleNameChange} value={reservation.reservationName} name="reservationName" type="text"/>
               </div>
               <div className="form-group">
-                <label>Special Request</label>
+                <label>Special Request</label><br></br>
                 <input onChange={this.handleDesChange} value={reservation.description} name="description" type="text"/>
               </div>
-              <button type="submit">Update</button>
+              <button className="edit-form-btn" type="submit">Update</button>
             </form>
-        
+          </div>
+
       
         )
     }

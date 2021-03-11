@@ -10,7 +10,7 @@ class MakeBooking extends Component {
       <div>
     
         <div className="main-body booking-body" style={{backgroundImage: `url(/images/cafe-bg3.jpg)`,backgroundSize: "cover",backgroundPosition:"center",backgroundRepeat:'no-repeat'}}>
-          <div className="booking-right">
+          <div className="booking-inner">
             <h1>Reservation here!</h1>
             <form onSubmit={this.props.onAdd} className="book-form">
               <div className="form-topic">
