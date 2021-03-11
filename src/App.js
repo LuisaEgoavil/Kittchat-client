@@ -107,12 +107,13 @@ componentDidMount(){
   // let reservationId = this.props.match.params.reservationId
   axios.get(`${config.API_URL}/api/reservations`, {withCredentials: true})
       .then((response) => {
-        console.log(response, "just chekcing")
+        console.log(response, "just checking")
           this.setState({ reservations: response.data})
       })
       .catch(() => {
           console.log('Detail fetch failed')
       })
+
       //everytime we refresh the page the user will stay logged in
       if(!this.state.loggedInUser) {
         axios.get(`${config.API_URL}/api/user`, {withCredentials: true})
@@ -157,7 +158,7 @@ componentDidMount(){
 
 handleEditReservation = (event) => {
   event.preventDefault();
-  let reservationName=event.target.reservationName.value
+  let reservationName = event.target.reservationName.value
   let description = event.target.description.value
   let id = event.target.id.value
   let locationName = event.target.locationName.value
