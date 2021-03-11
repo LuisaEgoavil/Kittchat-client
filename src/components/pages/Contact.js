@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import L from 'leaflet';
 import {Spinner} from 'react-bootstrap'
 
+
 class Contact extends Component {
 
   // step 1. Read state
@@ -67,7 +68,7 @@ class Contact extends Component {
     const position5 = [52.535594, 13.424836]
 
     const locationPin = new L.Icon({
-      iconUrl: '../images/pin2.png',
+      iconUrl: '../images/pin.png',
       iconSize: [60, 60]
     })
 
