@@ -109,8 +109,6 @@ class EditForm extends Component {
               <button className="edit-form-btn" type="submit">Update</button>
             </form>
           </div>
-
-      
         )
     }
 }
