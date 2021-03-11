@@ -38,8 +38,8 @@ class BookingList extends Component {
             <p><strong>Date</strong> <br/><span className="confirm-topic">{reservation.date}</span></p>
             <p><strong>Time</strong> <br/><span className="confirm-topic">{reservation.time}</span></p>
             <p><strong>Special request</strong> <br/><span className="confirm-topic">{reservation.description}</span></p>
-            <Link to="/profile"><button>Profile</button></Link>
-            <button onClick={() => {onDelete(reservation._id)}}>Cancel </button>
+            <Link to="/profile"><button className="confirm-profile">Profile</button></Link>
+            <button className="confirm-cancel" onClick={() => {onDelete(reservation._id)}}>Cancel </button>
           </div>
         </div>
       </div>

@@ -91,12 +91,12 @@ class EditForm extends Component {
 
               <div className="form-group">
               <input hidden value={reservation._id} name="id" type="text"/>
-                <label >Name</label><br></br>
+                <label className="edit-form-location">Name</label><br></br>
                 <input onChange={this.handleNameChange} value={reservation.reservationName} name="reservationName" type="text"/>
               </div>
 
               <div className="form-group">
-                <label>Special Request</label><br></br>
+                <label className="edit-form-location">Special Request</label><br></br>
                 <input onChange={this.handleDesChange} value={reservation.description} name="description" type="text"/>
               </div>
               <button className="edit-form-btn" type="submit">Update</button>

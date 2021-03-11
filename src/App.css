@@ -352,9 +352,13 @@
   padding: 1% 2%;
 }
 
+.edit-form-btn{
+  background-color: rgb(255, 210, 85);
+}
+
 /* -----confirm page----- */
 .confirm-body {
-  height: 590px;
+  height: 900px;
 }
 
 .confirm-body h1 {
@@ -362,8 +366,8 @@
 }
 
 .confirm-inner {
-  margin: 0 auto;
-  width: 50%;
+  margin: 5% auto 0;
+  width: 40%;
   border: 1px solid;
   padding: 2% 2%; 
   background-color: rgba(250, 250, 250, 0.7);
@@ -372,15 +376,26 @@
 .confirm-inner p {
   white-space: nowrap;
   margin-bottom: 2%;
+  font-size: 28px;
 }
 
 .confirm-topic {
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .confirm-inner button {
   margin: 2% 10% 0;
   padding: 1% 2%;
+}
+
+.confirm-cancel{
+  background-color: #fa4d4d;
+  color: #fff;
+}
+
+.confirm-profile{
+  background-color: rgb(155, 208, 65);
+  color: #000;
 }
 
 /*----- Login----- */
