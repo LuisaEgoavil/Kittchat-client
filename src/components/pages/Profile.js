@@ -87,11 +87,11 @@ handleEditReservation = (reservationId) => {
             {
               reservations.map((reservation, index) => {
                 return <div className="main-body profile-body" key={index}>
-                <p><strong>Location:</strong> {reservation.locationName.cafeName}</p>
-                <p><strong>Address:</strong> {reservation.locationName.address}</p>
-                <p><strong>Phone Number:</strong> {reservation.locationName.phoneNumber}</p>
-                <p><strong>Opening Hour:</strong> {reservation.locationName.hours}</p>
-                <p><strong>Email:</strong> {reservation.locationName.email}</p>
+                <p><strong>Location:</strong> {reservation.locationName?.cafeName}</p>
+                <p><strong>Address:</strong> {reservation.locationName?.address}</p>
+                <p><strong>Phone Number:</strong> {reservation.locationName?.phoneNumber}</p>
+                <p><strong>Opening Hour:</strong> {reservation.locationName?.hours}</p>
+                <p><strong>Email:</strong> {reservation.locationName?.email}</p>
                 <p><strong>Name:</strong> {reservation.reservationName}</p>
                 <p><strong>Date:</strong> {reservation.date}</p>
                 <p><strong>Time:</strong> {reservation.time}</p>
