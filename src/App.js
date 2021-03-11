@@ -155,13 +155,15 @@ componentDidMount(){
   }
 //----------EDIT---------------------------------------------------------//
 
-handleEditReservation = (reservation) => {
-  axios.patch(`${config.API_URL}/api/profile/${reservationId}`, {
-    locationName: reservation.locationName,
-    time: reservation.time,
-    date: reservation.date,
-    reservationName: reservation.reservationName,
-    description: reservation.description
+handleEditReservation = (event) => {
+  event.preventDefault();
+  let reservationName=event.target.reservationName.value
+  let description = event.target.description.value
+  let id = event.target.id.value
+
+  axios.patch(`${config.API_URL}/api/profile/${id}`, {
+    reservationName,
+    description
   })
 
     .then(() => {
@@ -185,6 +187,9 @@ handleEditReservation = (reservation) => {
       console.log('edit failed', err)
     })
 }
+
+
+
 //------------DELETE-------------------------------------------------------//
   handleDelete = (reservationId) => {
     axios.delete(`${config.API_URL}/api/bookinglist/${reservationId}`, {}, {withCredentials: true})
@@ -215,15 +220,15 @@ handleEditReservation = (reservation) => {
           <Route path="/cafe" component={Cafe} />
           <Route path="/catinfo" component={CatInfo} />
           <Route path="/contact" component={Contact} />
-          <Route path="/profile" render={ (routeProps) => {
+          <Route exact path="/profile" render={ (routeProps) => {
             return <Profile user={loggedInUser} onDelete={this.handleDelete}{...routeProps}/>
           }}/>
           <Route path="/reservation" component={Reservation} />
           <Route path="/bookinglist/:id" render={(routeProps) => {
             return <BookingList user={loggedInUser} onDelete={this.handleDelete} {...routeProps}/>
           }} />
-          <Route path="/profile/:id/edit" render={(routeProps) => {
-            return <EditForm onEdit={this.handleEditReservation} {...routeProps} />
+          <Route path="/profile/edit/:id" render={(routeProps) => {
+            return <EditForm user={loggedInUser} onEdit={this.handleEditReservation} {...routeProps} />
           }} />
           <Route path="/signup" render={(routeProps)=> {
             return <SignUp  onSignUp={this.handleSignUp}{...routeProps}/>

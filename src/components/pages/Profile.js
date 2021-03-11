@@ -97,7 +97,7 @@ handleEditReservation = (reservationId) => {
                 <p><strong>Time:</strong> {reservation.time}</p>
                 <p><strong>Request:</strong> {reservation.description}</p>
                 <button className="delete-btn" onClick={() => {this.handleDelete(reservation._id)}}>Delete</button>
-                <button onClick={() => {this.handleEditReservation(reservation._id)}}>Change</button>
+                <Link to={`/profile/edit/${reservation._id}`}><button className="change-btn">Change</button></Link>
                 </div>  
                 })
             }
