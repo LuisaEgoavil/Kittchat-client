@@ -90,11 +90,11 @@
 
 /* -----Home page----- */
 .home-body {
-  height: 590px;
+  height: 900px;
 }
 
 .home-inside {
-  margin: 5% 20%;
+  margin: 10% 20%;
   padding: 6% 10%;
   border-radius: 5px;
   background-color: rgba(250, 250, 250, 0.7);
@@ -203,6 +203,9 @@
 
 
 /* -----Contact Page----- */
+.contact-body-wrapper {
+  height: 900px;
+}
 .contact-body-wrapper h1 {
   margin-bottom: 3%;
   text-shadow: 4px 4px 5px #808080;
