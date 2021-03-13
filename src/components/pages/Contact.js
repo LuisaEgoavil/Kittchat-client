@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import L from 'leaflet';
 import {Spinner} from 'react-bootstrap'
 
+
 class Contact extends Component {
 
   // step 1. Read state
@@ -67,7 +68,7 @@ class Contact extends Component {
     const position5 = [52.535594, 13.424836]
 
     const locationPin = new L.Icon({
-      iconUrl: '../images/pin2.png',
+      iconUrl: '../images/pin.png',
       iconSize: [60, 60]
     })
 
@@ -90,7 +91,7 @@ class Contact extends Component {
             </div>
 
             <div className="contact-right">
-              <MapContainer style={{width: '550px', height: '470px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
+              <MapContainer style={{width: '550px', height: '565px'}}center={centerPosition} zoom={11} scrollWheelZoom={false}>
                 <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                   

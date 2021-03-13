@@ -105,7 +105,7 @@ handleLogInAdmin = (event) => {
 }
 //-----------Reservation form-------------------------------------------------//
 componentDidMount(){
-  // let reservationId = this.props.match.params.reservationId
+  let reservationId = this.props.match.params.reservationId
   // axios.get(`${config.API_URL}/api/reservations`, {withCredentials: true})
   //     .then((response) => {
   //       console.log(response, "just checking")
