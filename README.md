@@ -1,9 +1,47 @@
-# Kittchat
-
+# Kittchat 🐱
 
 ## Description
 
-## MVP
+- Kittchat is a Cat Cafe Website where customers can make booking within 5 different locations.
+
+## MVP || Backlog
+
+- [X] Login
+- [X] SignUp
+- [X] Logout
+- [X] SignUp
+- [X] Booking site
+- [X] Booking history 
+- [X] User page
+- [X] Admin page
+
+## Models (Server side)
+
+- Reservation.model.js
+- User.model.js
+- Location.model.js
+
+## Routes (Client side)
+
+- Home.js
+- Cafe.js
+- CatInfo.js
+- Contact.js
+- EditForm.js
+- Home.js
+- MakeBooking.js
+- Profile.js
+- Reservation.js
+- BookingList.js
+____________________________
+- Error.js
+- Footer.js
+- Header.js
+
+### authentification
+
+- LogIn.js
+- SignUp.js
 
 ## Built with
 <div style='margin:15px'>
@@ -28,4 +66,7 @@
 
 </div>
 
+## Take a look to our deployed Website!
+
+- Click [here](https://kittchat.herokuapp.com)
 
