@@ -1,7 +1,7 @@
 # Kittchat 🐱
 <div>
 
-<img alt="readmephoto" width="80px" src="./public/images/readme.png">
+<img alt="readmephoto" width="400px" src="./public/images/readme.png">
 
 </div>
 
