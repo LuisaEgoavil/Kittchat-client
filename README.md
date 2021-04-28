@@ -26,7 +26,7 @@
 - User.model.js
 - Location.model.js
 
-- Code here: https://github.com/LuisaEgoavil/Kittchat-server
+- Server side code here: https://github.com/LuisaEgoavil/Kittchat-server
 
 ## Routes (Client side)
 
@@ -45,7 +45,7 @@ ____________________________
 - Footer.js
 - Header.js
 
-- Code here: https://github.com/LuisaEgoavil/Kittchat-client
+- Client side code here: https://github.com/LuisaEgoavil/Kittchat-client
 
 ### authentification
 
