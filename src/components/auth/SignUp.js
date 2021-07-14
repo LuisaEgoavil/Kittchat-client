@@ -46,6 +46,7 @@ class SignUp extends Component {
                 <label>Password</label>
                 <input name="password" type="password"/>
               </div>
+              <p>Password must contain one capital letter, one number and one object (! , ?)</p>
               <button className="signup-btn" type="submit">Sign Up</button>
 
               {/* <GoogleLogin 
